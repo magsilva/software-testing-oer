@@ -1,0 +1,130 @@
+\begin{frame}[parent={cmap:experimental-studies},hasnext=true,hasprev=true]
+\frametitle{Experimental studies}
+\framesubtitle{Experimental study activities}
+
+\begin{block:procedure}{Activities}
+\begin{enumerate}
+	\item Select and prepare the programs to be tested (the population of the
+	experiment).
+
+	\item Select the software testing tools.
+
+	\item Create test cases adequate for a set of test criteria (the test
+	criteria are the intervention of the experiment).
+
+	\item Run the program under test using the test cases.
+
+	\item Identify infeasible requirements.
+
+	\item Collect and analyze the results.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Experimental studies}
+\framesubtitle{Program selection}
+
+\begin{block:fact}{Program selection}
+\begin{itemize}
+	\item Programs should be selected for testing.
+
+	\item Open source software are an interesting choice (as their source
+	code is readily available).
+
+	\item Simple programs, such as \srccode{cal} and \srccode{identifier},
+	can also be used (but with reduced confidence in the evalution of the
+	properties of the test criteria).
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experimental studies}
+\framesubtitle{Selection of Software testing tools}
+
+\begin{block:fact}{Test tools selection}
+\begin{itemize}
+	\item It is a requirement that the test be automated as much as possible.
+
+	\item A common requirement is that the test tools provide a script
+	execution mode (so that the tester intervention is not required to run
+	every aspect of the tool).
+
+	\item JaBUTi can be run from the command line, using scripts.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experimental studies}
+\framesubtitle{Test cases generation}
+
+\begin{block:fact}{Test cases generation}
+\begin{itemize}
+	\item Test cases are usually generated randomly.
+	\begin{itemize}
+		\item It is easy to generate input data randomly.
+		\item It eliminates the influence of the tester on the generated data
+		(and any threat of validity due to the tester influence).
+	\end{itemize}
+
+	\item If the required test coverage is not achieved, test cases should
+	be manually and added to the test set.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Experimental studies}
+\framesubtitle{Execution}
+
+\begin{block:fact}{Program execution}
+\begin{itemize}
+	\item Using the test tool, the program is run using the input data from
+	the test cases.
+
+	\item The output data of the program is compared with the expected output
+	data (as of the test cases).
+
+	\item Test requirements satisfaction is analyzed using the program results
+	and execution trace.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Infeasible requirements identification}
+\begin{itemize}
+	\item Infeasible requirements (non-executable paths, equivalent mutants)
+	should be identified.
+
+	\item Test set should be augmented until a $C-adequate$ test set is
+	defined.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasnext=false]
+\frametitle{Experimental studies}
+\framesubtitle{Execution}
+\label{concept:experimental-studies:analysis}
+
+\begin{block:fact}{Analysis}
+\begin{itemize}
+	\item Test results -- cost, efficacy and strength -- are calculated and
+	compared.
+
+	\item Relations between test criteria are established.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:subsume-relation}{Example: subsume relation}
+\end{frame}

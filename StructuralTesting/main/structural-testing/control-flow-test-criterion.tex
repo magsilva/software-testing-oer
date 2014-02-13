@@ -1,0 +1,137 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Control flow test criterion}
+\label{concept:control-flow-test-criterion}
+
+\begin{block:concept}{Definition}
+\begin{itemize}
+	\item Control flow test criterion employs only characteristics related
+	to the control structure of the program to determine the set of test
+	requirements.
+
+	\item Control flow test criterion identifies the execution paths
+	inside a module and then creates and executes test cases to cover those
+	paths.
+\end{itemize}
+\end{block:concept}
+
+\begin{block:fact}{Control flow test criteria}
+\begin{itemize}
+	\item All-Nodes.
+	\item All-Edges.
+	\item All-Paths.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Control flow test criteria and JaBUTi}
+\begin{itemize}
+	\item Regarding control-flow, JaBUTi supports the following test criteria:
+	All-Nodes and All-Edges.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Control flow test criterion}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item In control flow test criterion, the number of test requirements
+	can be huge and thus untestable within a reasonable amount of time:
+	\begin{itemize}
+		\item Every decision doubles the number of paths; every loop multiplies
+		the paths by the number of iterations through the loop.
+	\end{itemize}
+
+	\item Paths called for in the specification may simply be missing in the
+	module.
+
+    \item Defects may exist in processing statements within the module even
+	through the control flow itself is correct.
+
+    \item The module may execute correctly for almost all data values but fail
+	for a few.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-nodes-criterion}
+\label{concept:all-nodes}
+\frametitle{Control flow test criterion}
+\framesubtitle{All-Nodes}
+
+\begin{block:concept}{Definition}
+All-Nodes requires a test set that exercises at least once each node of the
+control flow graph, which is equivalent to executing all code blocks of a
+program at least once.
+\end{block:concept}
+
+\hfill
+\refie{example:all-nodes}{\beamerbutton{Example: All-nodes example}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Control flow test criterion}
+\framesubtitle{All-Nodes}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item Even though the All-Nodes criterion is the simplest structural test
+	criterion, it may be difficult to satisfy in practice:
+	\begin{itemize}
+		\item Often programs have code that is executed only in exceptional
+		circumstances-low memory, full disk, unreadable files, lost
+		connections, etc.
+
+		\item Testers may find it difficult or even impossible to simulate
+		these circumstances and thus code that deals with these problems will
+		remain untested.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-edges-criterion}
+\label{concept:all-edges}
+\frametitle{Control flow test criterion}
+\framesubtitle{All-Edges}
+
+
+\begin{block:concept}{Definition}
+All-Edges requires a test set which traverses at least once each edge
+of the control flow graph, i.e., the test set must ensure that each
+conditional statement assumes true and false values at least once.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Control flow testing criterion}
+\framesubtitle{All-Paths}
+\label{concept:all-paths-criterion}
+\label{concept:all-paths}
+
+\begin{block:concept}{Definition}
+All-Paths requires a test set that executes all possible paths of the control
+flow graph.
+\end{block:concept}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item For program units without loops, the test requirements for the
+	All-Paths criterion is generally small enough so that a test case can
+	actually be constructed for each path.
+
+	\item For program units with loops, the test requirements for the All-Paths
+	criterion can be enormous and thus pose an intractable test problem.
+\end{itemize}
+\end{block:fact}
+\end{frame}

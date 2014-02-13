@@ -1,0 +1,41 @@
+\begin{frame}[parent={cmap:jabuti-measurement-tool},hasnext=true,hasprev=true]
+\frametitle{Measurement tool}
+\framesubtitle{Test strategy}
+
+\begin{block:fact}{Test strategy}
+\begin{itemize}
+	\item JaBUTi does not establish a test strategy, nor suggest a test
+	requirement weight using the measurements herein described.
+
+	\item It is the tester duty to use them and define himself the test
+	requirements which should be satisfied first.
+\end{itemize}
+\end{block:fact}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Measurement tool}
+\framesubtitle{Example}
+\label{concept:jabuti-measurement-tool}
+
+\begin{block}{Example}
+\begin{itemize}
+	\item \srccode{bst.BinarySearchTreeWithRank} and \srccode{bst.BinarySearchTree}
+	have the highest complexity (CC\_AVG, CC\_MAX), larger methods (AMZ\_LOCM, AMZ\_SIZE),
+	and coupling (CBO).
+
+	\item The absolute size of \srccode{bst.BinarySearchTreeWithRank} is smaller
+	than \srccode{bst.BinarySearchTree} (LCOM).
+
+	\item \srccode{bst.BinarySearchTreeWithRank} is higher in the hierarchy than
+	\srccode{bst.BinasrySearchTree} (DIT).
+
+	\item Thus, \srccode{bst.BinarySearchTreeWithRank} is a good candidate to
+	start the testing activity with.
+\end{itemize}
+\end{block}
+\end{frame}
+

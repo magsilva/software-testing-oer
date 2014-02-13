@@ -1,0 +1,27 @@
+\begin{frame}[parent={concept:fixture}, hasprev=false, hasnext=false]
+\frametitle{Fixture}
+\framesubtitle{After}
+\label{concept:junit-after-fixture}
+\label{concept:after-fixture}
+\label{concept:after}
+
+\begin{block:concept}{After}
+After is a fixture that is used to cleanup modifications made for or
+by a test case.
+\end{block:concept}
+
+\begin{block:fact}{How to use it?}
+\begin{itemize}
+	\item The After fixture is created by annotating a method with
+	\srccode{@After}.
+
+	\item After fixtures run after a JUnit test case.
+
+	\item After fixtures declared in the superclasses will be run before those
+	of the current class.
+
+	\item No ordering is defined when running After fixtures declared in the
+	same class.
+\end{itemize}
+\end{block:fact}
+\end{frame}

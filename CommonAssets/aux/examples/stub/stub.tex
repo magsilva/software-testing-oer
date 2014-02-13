@@ -1,0 +1,122 @@
+\begin{frame}[hasprev=false, hasnext=true]
+\frametitle{Stub/Mock using Mockito}
+\label{example:stub}
+
+\begin{block:fact}{Mockito}
+\begin{itemize}
+	\item Mockito is a mocking framework.
+	\begin{itemize}
+		\item Mock is something that mimics an unit of software.
+
+		\item A stub mocks an unit of software.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{How does it work}
+\begin{itemize}
+	\item A mock is created for a given class.
+	\begin{itemize}
+		\item This mock is an instance of the given class, but which behaviour
+		is undefined.
+	\end{itemize}
+
+	\item After the instantiation of the mock, the behaviour of every method
+	that will be tested must be defined.
+	\begin{itemize}
+		\item For instance, you can define that the method \srccode{get}, when
+		using the parameter \srccode{35}, will return the string
+		\srccode{Tomato}.
+	\end{itemize}
+
+	\item Thus, complex objects do not need to be implemented: just stub the
+	methods used in the test case.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Stub/Mock using Mockito}
+\framesubtitle{Example}
+
+\begin{block}{Test case}
+\begin{itemize}
+	\item Imagine the following situation. The unit under testing is the class
+	\srccode{IdentityMethodSet}.
+	\begin{itemize}
+		\item This class defines a set that uses as identity the method which
+		name is given as parameter in the constructor (which is
+		\srccode{toString} in the example).
+	\end{itemize}
+
+	\item You need to test the behaviour of the \srccode{IdentityMethodSet} for
+	a class that can throw an exception when the method assigned as identity
+	is used.
+	\begin{itemize}
+		\item \srccode{IdentityMethodSet} must throw an
+		\srccode{UnsupportedOperationException} if it fails to use the identity
+		method of the object.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Stub/Mock using Mockito}
+\framesubtitle{Example}
+
+\begin{block}{Test case}
+\begin{itemize}
+	\item However, it may be difficult to find a class that implements such
+	behaviour.
+
+	\item So, instead of finding a class that has such behaviour, we just
+	create a mock that stubs the method \srccode{toString}.
+	\begin{itemize}
+		\item And we configure this method, in the mock, to throw an exception.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false, fragile]
+\frametitle{Stub/Mock using Mockito}
+\framesubtitle{Example}
+
+
+\begin{block}{Implementation}
+\begin{lstlisting}[language=java]
+import static org.mockito.Mockito.*;
+
+public class IdentityMethodSetTest {
+{
+	@Test(expected=UnsupportedOperationException.class)
+	public void testNew_InvalidIdentityMethod_UnsupportedOperation()
+	{
+		InetAddress clazz = mock(InetAddress.class);
+		when(clazz.toString()).thenThrow(new NullPointerException());
+		IdentityMethodSet set = new IdentityMethodSet<String, InetAddress>("toString");
+		set.add(clazz);
+	}
+}
+\end{lstlisting}
+\end{block}
+
+\begin{block}{Implementation details}
+\begin{itemize}
+	\item The mock is created using the method \srccode{mock} (imported
+	from \srccode{org.mockito.Mockito}).
+
+	\item The method \srccode{toString} is stubbed (using the statement
+	\srccode{when}).
+	\begin{itemize}
+		\item It will throw a \srccode{NullPointerException} (as defined by the
+		statement \srccode{thenThrow}).
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}

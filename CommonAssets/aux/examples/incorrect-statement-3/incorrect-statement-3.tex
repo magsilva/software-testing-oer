@@ -1,0 +1,43 @@
+\begin{frame}[hasprev=false, hasnext=true, fragile]
+\label{example:incorrect-statement-3}
+\frametitle{Incorrect statement}
+
+\begin{itemize}
+	\item Consider the following statement, as defined in the software
+	requirements specification.
+	\begin{itemize}
+		\item The $z$ dimension value of the vortex is the sum of its $x$ and
+		$y$ dimension values.
+	\end{itemize}
+
+	\item By an unknown reason (the cat walked on the keyboard, insomnia,
+	keyboard malfunctioning), the programmer wrote a statement that does
+	not correctly implements the requirement:
+	\begin{lstlisting}
+		z = x - y.
+	\end{lstlisting}
+
+	\item This programmer incurred into a mistake, which characterized a fault.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Incorrect statement}
+
+\begin{itemize}
+	\item If such a fault is activated (executed) with \srccode{x = 0},
+	regardless of the value of \srccode{y}, no incorrect output is produced.
+	\begin{itemize}
+	    \item Although the fault is activated, it does not lead to
+	    an error and no failure occurs.
+	\end{itemize}
+
+	\item For any other value different from \srccode{x = 0}, the fault
+	activation causes an error on the variable \srccode{z}.
+	\begin{itemize}
+	    \item Such an error, when propagated until the product output, will
+	    result in a failure.
+    \end{itemize}
+\end{itemize}
+\end{frame}

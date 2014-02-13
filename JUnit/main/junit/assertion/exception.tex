@@ -1,0 +1,25 @@
+\begin{frame}[parent={concept:assertion}, hasprev=false, hasnext=false]
+\frametitle{Assertion}
+\framesubtitle{Exception assertion}
+\label{concept:junit-exception-assertion}
+\label{concept:exception-assertion}
+
+\begin{block:concept}{Exception assertion}
+An Exception assertion checks whether an exception is thrown by the test case.
+\end{block:concept}
+
+
+\begin{block:fact}{Annotation}
+\begin{itemize}
+	\item If the JUnit test case expects an exception to be thrown, it must
+	declare the expected exception in the @Test annotation, at the
+	\srccode{expected} parameter
+	\begin{itemize}
+		\item (e.g., \srccode{@Test(expected=IndexOutOfBoundsException.class)}.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:junit-exception-assertion}{\beamerbutton{Example: Exception assertion}}
+\end{frame}

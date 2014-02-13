@@ -1,0 +1,76 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Complexity-based test criterion}
+\label{concept:complexity-based-test-criterion}
+
+\begin{block:concept}{Definition}
+Complexity-based test criterion uses information about program complexity
+in order to derive test requirements.
+\end{block:concept}
+
+\begin{block:fact}{Complexity-based test criteria}
+\begin{itemize}
+	\item A well known complexity-based test criterion is the McCabe's
+	criterion.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:mccabe-criterion}
+\frametitle{Complexity-based criterion}
+\framesubtitle{McCabe's criterion}
+
+\begin{block:concept}{Definition}
+The McCabe's criterion requires a set of linearly independent complete paths
+from the control flow graph to be traversed by the execution of the test set.
+\end{block:concept}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item The McCabe's criterion uses the cyclomatic complexity to derive the
+	set of testing requirements.
+
+	\item Satisfying McCabe's criterion automatically guarantees both
+	decision coverage (All-edges) and statement coverage (All-nodes).
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{procedure:mccabe-criterion}
+\frametitle{Complexity-based criterion}
+\framesubtitle{McCabe's criterion}
+
+\begin{block:procedure}{}
+\begin{enumerate}
+	\item Derive the CFG from the software module.
+	\item Compute the graph's Cyclomatic Complexity (C).
+	\item Select a set of C linearly independent paths.
+	\begin{enumerate}
+		\item Pick a baseline path (it must be a complete path).
+		\begin{enumerate}
+			\item This path should be a reasonably typical path of execution
+			rather than an exception processing path.
+
+			\item The best choice would be the most important path from the
+			tester's viewpoint.
+		\end{enumerate}
+
+		\item To choose the next path, change the outcome of the first decision
+		along the baseline path while keeping the maximum number of other
+		decisions the same as the baseline path.
+
+		\item Generate the remaining paths by varying the remaining decisions,
+		one by one.
+	\end{enumerate}
+	\item Create a test case for each basis path.
+\end{enumerate}
+\end{block:procedure}
+
+
+\hfill
+\hyperlink{example:mccabe}{\beamerbutton{Example: McCabe's criterion example}}
+\end{frame}

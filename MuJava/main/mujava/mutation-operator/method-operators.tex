@@ -1,0 +1,57 @@
+\begin{frame}[parent={concept:mujava}, hasprev=false, hasnext=true]
+\frametitle{Method operators}
+
+\begin{block:concept}{Method operators}
+Method-level mutation operators apply simple syntactical modifications to the
+methods of the classes of the application under testing.
+\end{block:concept}
+
+\begin{block:fact}{Design rationale}
+\begin{itemize}
+	\item Method operators were designed using the selective approach.
+	\begin{itemize}
+		\item The selection results found that operand and statement
+		modifications have poor effectiveness.
+
+		\item Thus, only operators that replace, delete, or insert elements in
+		expressions were selected.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Method operators}
+
+\begin{block:fact}{Types of expression operators}
+\begin{itemize}
+	\item Arithmetic operator.
+	\item Relational operator.
+	\item Conditional operator.
+	\item Shift operator.
+	\item Logical operator.
+	\item Assignments.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Method operators}
+
+\begin{block:fact}{Operators}
+\begin{itemize}
+	\item For arithmetic, conditional and logical operators, it is defined
+	replacement, insertion, and deletion mutation operators.
+	\begin{itemize}
+		\item For arithmetic operators, more operators are defined according
+		to the type and number of operands.
+	\end{itemize}
+
+	\item For relational, shift, and assignment operators, it is defined
+	replacement operators.
+\end{itemize}
+\end{block:fact}
+\end{frame}

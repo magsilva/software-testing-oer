@@ -1,0 +1,83 @@
+\begin{frame}[parent={cmap:jabuti-measurement-tool},hasnext=true,hasprev=true]
+\frametitle{Measurement tool}
+\framesubtitle{Metrics}
+
+\begin{block:fact}{Metrics}
+\begin{itemize}
+	\item Three types of measures are provided by JaBUTi:
+	\begin{itemize}
+		\item Lorenz and Kidd metrics (LK) \cite{lorenz-kidd:1994},
+
+		\item Chidamber and Kemerer metrics (CK) \cite{chidamber-kemerer:1994},
+		and
+
+		\item Complexity based metrics \cite{mccabe:1976}.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Measurement tool}
+\framesubtitle{LK and CK metrics}
+\label{concept:ck-metrics}
+\label{concept:lk-metrics}
+
+\begin{block:fact}{LK and CK metrics}
+\begin{itemize}
+	\item LK and CK metrics are used for classes:
+	\begin{itemize}
+		\item number of methods of a class,
+		\item average of number of parameters of the method of a class,
+		\item number of attributes of a class,
+		\item average size of the methods of a class,
+		\item number of implemented interfaces,
+		\item lack of cohesion in methods.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Example}
+\small
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Class}					& \textbf{AMZ\_LOCM}& \textbf{CBO}	& \textbf{DIT}\\\hline
+bst.BinaryNode 					& 5.000				& 01			& 1\\\hline
+bst.BinarySearchTree 			& 5.111 			& 10			& 1\\\hline
+bst.BinarySearchTreeWithRank	& 9.857 			& 09			& 2\\\hline
+\end{tabular}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Measurement tool}
+\framesubtitle{Complexity metrics}
+\label{concept:cyclomatic-complexity}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item Complexity metrics are used for methods:
+	\begin{itemize}
+		\item Average value of the complexity metric of the methods of a
+		class.
+
+		\item Maximum value of the complexity metric of the methods of a
+		class.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Example}
+\small
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Class}				& \textbf{CC\_AVG}	& \textbf{CC\_MAX}\\\hline
+bst.BinaryNode 				& 1.000				& 1\\\hline
+bst.BinarySearchTree 		& 2.500				& 7\\\hline
+bst.BinarySearchTreeWithRank& 4.286				& 9\\\hline
+\end{tabular}
+\end{block}
+\end{frame}
+

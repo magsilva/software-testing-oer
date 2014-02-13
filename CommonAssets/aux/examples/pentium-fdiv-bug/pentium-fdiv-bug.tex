@@ -1,0 +1,63 @@
+\begin{frame}[hasprev=false, hasnext=true]
+\label{example:pentium-fdiv-bug}
+\frametitle{Pentium FDIV bug}
+\framesubtitle{Description}
+
+\begin{itemize}
+	\item In 1994, Intel introduced its Pentium microprocessor, and a
+	few months later, a mathematician found that the chip gave incorrect
+	answers to certain floating-point division calculations.
+	\begin{itemize}
+		\item The chip was slightly inaccurate for a few pairs of numbers.
+	\end{itemize}
+
+	\item Example: A number multiplied and then divided by the same number
+	should result in the original number)
+	\begin{itemize}
+		\item Expected result: $4195835*3145727/3145727  = 4195835$
+		\item Flawed Pentium result: $4195835*3145727/3145727  = 4195579$
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Pentium FDIV bug}
+\framesubtitle{Diagnostic}
+
+\begin{itemize}
+	\item The fault was the omission of five entries in a table of 1,066 values
+	(part of the chip's circuitry) used by a division algorithm.
+	\begin{itemize}
+		\item The five entries should have contained the constant +2, but the
+		entries were not initialized and contained zero instead.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Pentium FDIV bug}
+\framesubtitle{Solution}
+
+\begin{itemize}
+	\item The mistake that caused the fault was very difficult to find during
+	system testing.
+	\begin{itemize}
+		\item Intel claimed to have run millions of test cases using this
+		table.
+	\end{itemize}
+
+	\item The table entries were left empty because a loop termination
+	condition was incorrect
+	\begin{itemize}
+		\item The loop stopped storing numbers before it was finished.
+	\end{itemize}
+
+	\item This turns out to be a very simple fault to find during unit testing
+	\begin{itemize}
+		\item Analysis showed that almost any unit level coverage criterion
+		would have found this multi-million dollar mistake.
+	\end{itemize}
+\end{itemize}
+\end{frame}

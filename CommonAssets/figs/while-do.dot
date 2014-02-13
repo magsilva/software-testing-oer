@@ -1,0 +1,11 @@
+digraph Sequence {
+label="While-Do";
+node[label="",style=bold,shape=circle,style=filled,fontsize=12,fontname=Helvetica];
+edge[fontsize=12,fontname=Helvetica];
+fontsize=12;
+fontname=Helvetica;
+
+1 -> 2;
+2 -> 1;
+1 -> 3;
+}

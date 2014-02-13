@@ -1,0 +1,123 @@
+\begin{frame}[parent={concept:mutation-testing}, hasprev=false, hasnext=true]
+\frametitle{Mutation testing}
+\framesubtitle{Mutant}
+\label{concept:mutant}
+
+\begin{block:concept}{Mutant}
+% TODO: add mutant definition.
+\end{block:concept}
+
+
+\begin{block:fact}{Mutation testing}
+\begin{itemize}
+	\item In mutation testing, a single mutation is applied to the program P
+	under testing.
+	\begin{itemize}
+		\item Each mutant has a single syntactic transformation related to the
+		original program.
+	\end{itemize}
+
+	\item Tester has to create test cases that show that mutations create
+	incorrect products.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Mutation testing}
+\framesubtitle{Live mutant}
+\label{concept:live-mutant}
+
+\begin{block:concept}{Live mutant}
+A live mutant is a mutant that has the same behavior of the product P for each
+test case T.
+\end{block:concept}
+
+\begin{block:fact}{How to identify one?}
+\begin{itemize}
+	\item A live mutant must be analyzed by the tester to check whether it is
+	equivalent to product P or whether it can be killed by a new test case,
+	thus promoting the improvement of the test set T.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mutation testing}
+\framesubtitle{Dead mutant}
+\label{concept:dead-mutant}
+
+\begin{block:concept}{Dead mutant}
+A dead mutant is a mutant that has a diverse behavior from product P on at
+least one test case T.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mutation testing}
+\framesubtitle{Equivalent mutant}
+\label{concept:equivalent-mutant}
+
+\begin{block:concept}{Equivalent mutant}
+A mutant M is said equivalent to a product P if, for all input data $d \in D$,
+$M(d) = P(d)$.
+\end{block:concept}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item An equivalent mutant is created by a mutation operation that does not
+	result in a behavioral change for a product P, and, for every test datum in
+	the input domain, P and the mutant always compute the same results.
+\end{itemize}
+\end{block:fact}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mutation testing}
+\framesubtitle{Fault-revealing mutant}
+\label{concept:fault-revealing-mutant}
+
+\begin{block:concept}{Fault-revealing mutant}
+A mutant M is a fault-revealing mutant to a product P if for any test case $t$
+such that $P(t) \neq M(t)$ we can conclude that $P(t)$ is not in accordance
+with the expected result
+\end{block:concept}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item The presence of a fault is revealed by killing the mutant.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Mutation testing}
+\framesubtitle{Mutation score}
+\label{concept:mutation-score}
+
+\begin{block:concept}{Mutation score}
+Mutation score is the relation between the number of mutants killed by the
+test set T and the difference between the total number of mutants and the
+number of mutants equivalent to P.
+\end{block:concept}
+
+\begin{block:fact}{Meaning}
+\begin{itemize}
+	\item Mutation score is an objective measure to evaluate the test set
+	adequacy against mutation testing.
+	\begin{itemize}
+		\item Mutation score ranges from 0 to 1.
+
+		\item The higher the mutation score, the more adequate is the test set.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}

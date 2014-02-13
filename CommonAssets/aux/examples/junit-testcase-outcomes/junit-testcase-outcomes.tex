@@ -1,0 +1,30 @@
+\begin{frame}[fragile, hasnext=false, hasprev=false]
+\frametitle{Test case outcomes}
+\label{example:junit-testcase-outcomes}
+
+\begin{lstlisting}[language=bash]
+$ java \
+	-cp /opt/junit-4.8.1/junit-4.8.1.jar:.
+	org.junit.runner.JUnitCore
+	ExampleTestCase
+
+JUnit version 4.8.1
+...E
+Time: 0.004
+There was 1 failure:
+1) test3(ExampleTestCase)
+java.lang.AssertionError:
+	at org.junit.Assert.fail(Assert.java:91)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at ExampleTestCase.test3(ExampleTestCase.java:24)
+	[ ... ]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:117)
+	at org.junit.runner.JUnitCore.runMain(JUnitCore.java:98)
+	at org.junit.runner.JUnitCore.runMainAndExit(JUnitCore.java:53)
+	at org.junit.runner.JUnitCore.main(JUnitCore.java:45)
+
+FAILURES!!!
+Tests run: 3,  Failures: 1
+\end{lstlisting}
+\end{frame}

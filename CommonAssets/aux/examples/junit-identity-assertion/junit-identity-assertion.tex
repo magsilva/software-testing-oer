@@ -1,0 +1,24 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Identity assertion}
+\label{example:junit-identity-assertion}
+
+\begin{lstlisting}
+import org.junit.Test;
+import org.junit.Assert;
+
+public class IdentityTestCase
+{
+  @Test
+  public void validate0() {
+    String s = "test";
+    Assert.assertSame(s, s);
+  }
+
+  @Test
+  public void validate1() {
+    String s1 = "test";
+    String s2 = "test";
+    Assert.assertNotSame(s1, s2);
+  }
+\end{lstlisting}
+\end{frame}

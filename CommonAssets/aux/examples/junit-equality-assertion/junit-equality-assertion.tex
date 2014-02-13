@@ -1,0 +1,37 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Equality assertion}
+\label{example:junit-equality-assertion}
+
+\begin{lstlisting}
+import org.junit.*;
+
+public class EqualityTestCase
+{
+  @Test
+  public void validate0() {
+    String s1 = "test";
+    String s2 = "test"
+    Assert.assertEquals(s1, s2);
+  }
+
+  @Test
+  public void validate1() {
+    String s = "test";
+    Assert.assertEquals(s, s);
+  }
+
+  @Test
+  public void validate2() {
+    String[] s1 = {};
+    String[] s2 = {};
+    Asssert.assertArrayEquals(s1, s2);
+  }
+
+  @Test
+  public void validate3() {
+    String[] s1 = {"test"};
+    String[] s2 = {"test"};
+    Asssert.assertArrayEquals(s1, s2);
+  }
+\end{lstlisting}
+\end{frame}

@@ -1,0 +1,93 @@
+\begin{frame}[hasprev=false, hasnext=true, fragile]
+\frametitle{Structural testing example}
+\label{example:structural-testing}
+
+\begin{block}{Example}
+Consider the following source code snippet \cite[p. 45]{myers:2004}.
+\end{block}
+
+\begin{block}{Source code}
+\begin{lstlisting}[language=java]
+public int foo(int a, int b, int x) {
+	if (a > 1 && b == 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+	return x;
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true, fragile]
+\frametitle{Structural testing example}
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{block}{Statement criteria}
+\begin{itemize}
+	\item Test cases that cover all test requirements for \textbf{statement
+	criterion}:
+	\begin{itemize}
+		\item $(a = 2, b = 0, x = 3)$
+	\end{itemize}
+
+	\item But what if the error is related to the first decision?
+	\begin{itemize}
+		\item Instead of an $and$, it should be an $or$.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\column{.5\textwidth}
+\begin{block}{Source code}
+\begin{lstlisting}[language=java]
+public int foo(int a, int b, int x) {
+	if (a > 1 && b == 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+	return x;
+}
+\end{lstlisting}
+\end{block}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false, fragile]
+\frametitle{Structural testing example}
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{block}{Statement criteria}
+\begin{itemize}
+	\item Test cases that cover all test requirements for \textbf{decision
+	criterion}:
+	\begin{itemize}
+		\item $(a = 3, b = 0, x = 3)$
+		\item $(a = 2, b = 1, x = 1)$
+	\end{itemize}
+\end{itemize}
+\end{block}
+\column{.5\textwidth}
+\begin{block}{Source code}
+\begin{lstlisting}[language=java]
+public int foo(int a, int b, int x) {
+	if (a > 1 && b == 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+	return x;
+}
+\end{lstlisting}
+\end{block}
+\end{columns}
+\end{frame}
+

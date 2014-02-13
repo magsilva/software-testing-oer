@@ -1,0 +1,22 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Assertion}
+\label{example:junit-raw-assertion}
+
+\begin{lstlisting}
+import org.junit.Test;
+
+public class AssertionTestCase
+{
+  @Test
+  public void validate0() {
+    assert (2 + 2) == 4;
+  }
+
+  @Test
+  public void validate1() {
+    throw new AssertionError();
+  }
+
+}
+\end{lstlisting}
+\end{frame}

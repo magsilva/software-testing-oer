@@ -1,0 +1,105 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Data flow test criterion}
+\label{concept:data-flow-test}
+\label{concept:data-flow-test-criterion}
+
+\begin{block:concept}{Definition}
+Data flow test criteria explore the interaction involving definitions of
+variables and further references (uses) to such definitions to establish the
+test requirements.
+\end{block:concept}
+
+
+\begin{block:fact}{}
+\begin{itemize}
+    \item Data flow test criteria aims to detect faults related with
+	the definition and use of variables in a program, i.e., its target is the
+	flow of data instead of the flow of control of a program.
+	\begin{itemize}
+		\item Data flow testing is a powerful approach to detect improper use
+		of data values due to coding mistake.
+	\end{itemize}
+
+	\item Data flow test criteria complements the control flow test criteria.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Data flow testing criterion}
+\framesubtitle{All-Defs}
+\label{concept:all-defs}
+\label{concept:all-defs-criterion}
+
+\begin{block:concept}{Definition}
+The All-Defs requires that a data flow association for each variable
+definition to be exercised, at least once, by a definition-clear path with
+respect to a c-use or p-use.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:all-uses}
+\label{concept:all-uses-criterion}
+\frametitle{Data flow testing criterion}
+\framesubtitle{All-Uses}
+
+\begin{block:concept}{Definition}
+The All-Uses requires that all data flow associations between a
+variable definition and all its subsequence uses (c-uses and p-uses) to be
+exercised by at least one definition-clear path.
+\end{block:concept}
+
+\hfill
+\refie{example:identifier-all-uses}{\beamerbutton{Example: All-Uses test requirements for Identifier}}
+
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-p-uses}
+\label{concept:all-p-uses-criterion}
+\frametitle{Data flow testing criterion}
+\framesubtitle{All-P-Uses}
+
+\begin{block:concept}{Definition}
+The All-P-Uses requires that a data flow association for each predicative
+use of a variable to be exercised at least once.
+\end{block:concept}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:all-c-uses}
+\label{concept:all-c-uses-criterion}
+\frametitle{Data flow testing criterion}
+\framesubtitle{All-C-Uses}
+
+\begin{block:concept}{Definition}
+The All-C-Uses requires that a data flow association for each computational
+use of a variable to be exercised at least once.
+\end{block:concept}
+\end{frame}
+
+
+
+\begin{frame}[hasnext=false]
+\label{concept:all-pot-uses}
+\label{concept:all-pot-uses-criterion}
+\frametitle{Data flow testing criterion}
+\framesubtitle{All-Pot-Uses}
+
+\begin{block:concept}{Definition}
+The All-Pot-Uses requires for each node i containing a definition of
+a variable x that to all node and edge that can be reached from i by a
+definition-clear path with respect to x to be exercised.
+\end{block:concept}
+
+\hfill
+\refie{example:identifier-all-pot-uses}{\beamerbutton{Example: All-Potential-Uses test requirements for Identifier}}
+\end{frame}

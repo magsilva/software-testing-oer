@@ -1,0 +1,27 @@
+\begin{frame}[parent={concept:fixture}, hasprev=false, hasnext=false]
+\frametitle{Fixture}
+\framesubtitle{Before}
+\label{concept:junit-before-fixture}
+\label{concept:before-fixture}
+\label{concept:before}
+
+\begin{block:concept}{Before fixture}
+Before is a fixture that is used to set up pre-conditions for a test
+case.
+\end{block:concept}
+
+\begin{block:fact}{How to use it?}
+\begin{itemize}
+	\item The Before fixture is created by annotating a method with
+	\srccode{@Before}.
+
+	\item Before fixtures run before a JUnit test case.
+
+	\item Before fixtures declared in the superclasses will be run before those
+	of the current class.
+
+	\item No ordering is defined when running Before fixtures declared in the
+	same class.
+\end{itemize}
+\end{block:fact}
+\end{frame}

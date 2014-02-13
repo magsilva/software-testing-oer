@@ -1,0 +1,78 @@
+\pdfminorversion=7
+\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+
+
+\usepackage{lode-i18n}
+\usepackage{lode-srccode}
+\usepackage{lode-imacid}
+\usepackage{lode-pdf}
+
+\usepackage{animate}
+\usepackage{movie15}
+
+\title{Software testing}
+\subtitle{Fault-based testing}
+\author[]{%
+Marco Aurélio Graciotto Silva\inst{1}, \and
+Ellen Francine Barbosa\inst{1}, \\\and
+Márcio Eduardo Delamaro\inst{1}, \and
+Auri Marcelo Rizzo Vincenzi\inst{2}, \\\and
+José Carlos Maldonado\inst{1}}
+
+\newcommand{\numberofinstitutes}{2}
+\institute[ICMC]
+{
+	\inst{1}%
+%	\textbf{Institute of Mathematical Sciences and Computing}\\
+	University of São Paulo (USP)\\
+	São Carlos, SP, Brazil
+	\and
+	\inst{2}%
+%	\textbf{Institute of Informatics}\\
+	Federal University of Goiás (UFG)\\
+	Goiânia, GO, Brazil
+}
+
+\date[]{February 2011}
+
+\logopicture{figs/icmc-qualipso-inf}
+
+
+\begin{document}
+
+
+\frontmatter{}
+\include{preamble}
+
+
+\mainmatter{}
+\part{Fault-based testing}
+\section{Fault-based testing}
+\include{main/fault-based-testing}
+
+\subsection{Error seeding}
+\include{main/fault-based-testing/error-seeding}
+
+\part{Mutation testing}
+\subsection{Mutation testing}
+\include{main/fault-based-testing/mutation}
+
+\subsubsection{Mutant}
+\include{main/fault-based-testing/mutation/mutant}
+
+\subsubsection{Mutant operator}
+\include{main/fault-based-testing/mutation/mutant-operator}
+
+\subsubsection{Mutantion approach}
+\include{main/fault-based-testing/mutation/mutation-approach}
+
+\part{References and credits}
+\backmatter{}
+\include{bibliography}
+\include{credits}
+
+\part{Instructional elements}
+\include{examples}
+\include{exercises}
+
+\end{document}

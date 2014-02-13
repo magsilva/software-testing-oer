@@ -1,0 +1,30 @@
+\begin{frame}[hasprev=false,hasnext=false, fragile]
+\label{example:num-zero-test-cases}
+\frametitle{numZero test cases}
+\framesubtitle{Description}
+
+\begin{itemize}
+	\item Consider the following code:
+	\begin{lstlisting}
+    public static int numZero(int[] arr) {
+        int count = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+    \end{lstlisting}
+
+	\item Some test cases that could be designed for this code are:
+	\begin{itemize}
+		\item ([2, 7, 0], 1)
+		\item ([0, 7, 2], 1)
+		\item ([], 0)
+		\item ([0, 0, 0], 3)
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+

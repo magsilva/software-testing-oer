@@ -1,0 +1,120 @@
+\begin{frame}[parent={cmap:software-testing-foundations}, hasprev=false, hasnext=true]
+\frametitle{Oracle}
+
+\begin{block:fact}{Is it correct?}
+\begin{itemize}
+	\item Given a set of input conditions and the observable results of the
+	computation, who decides whether the results are correct?
+
+	\item Somebody or something must check whether the software, for a given
+	test case, has operated correctly.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Oracle}
+\label{concept:oracle}
+
+\begin{block:concept}{Definition}
+An oracle is any software, process, or data that provides the test designer
+with the expected result of a test case.
+\end{block:concept}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item An oracle decides whether output values are correct against what is
+	specified.
+	\begin{itemize}
+		\item An oracle is required to determine whether a fault was revealed.
+	\end{itemize}
+
+	% TODO: Propose a better classification of oracles
+	\item Some examples of oracle: human guess (kiddie oracle), regression
+	test suite, validated data, purchased test suite, existing software.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:kiddie-oracle}
+\frametitle{Oracle}
+\framesubtitle{Kiddie oracle}
+
+\begin{block:concept}{Definition}
+A kiddie oracle is obtained from running the software and seeing the output. If
+it looks about right, it must be right.
+\end{block:concept}
+
+\begin{block:fact}{Why should I use a kiddie oracle?}
+\begin{itemize}
+	\item Actually, you should not use it, as it is error prone.
+
+	\item Nonetheless, it is better than nothing.
+	\begin{itemize}
+		\item And, if the expected behavior of the application is not
+		documented, it is up to the user to detect the correct result anyway.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:kiddie-oracle}{\beamerbutton{Example: Human guess (kiddie) oracle}}
+\end{frame}
+
+
+
+\begin{frame}
+\label{concept:regression-test-suite-oracle}
+\frametitle{Oracle}
+\framesubtitle{Regression test suite oracle}
+
+\begin{block:concept}{Definition}
+A regression test suite oracle  is obtained from running the test case and
+comparing the output to the results of the same test cases run against a
+previous version of the software.
+\end{block:concept}
+
+\begin{block:fact}{Why should I use a regression suite oracle?}
+\begin{itemize}
+	\item Regression test ensures that the modified system functions as per
+	its specification.
+
+	\item It ensures that old errors will not appear again (or that, at least,
+	they will be early detected).
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:mozilla-firefox-regression-test-suite-oracle}{\beamerbutton{Example: Regression test suite oracle for Mozilla Firefox}}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\label{concept:purchased-test-suite-oracle}
+\frametitle{Oracle}
+\framesubtitle{Purchased test suite oracle}
+
+\begin{block:concept}{Definition}
+A purchased test suite oracle consists in running the software against a
+standardized test suite that has been previously created and validated.
+\end{block:concept}
+
+\begin{block:fact}{Why should I use a purchased oracle?}
+\begin{itemize}
+	\item Usually it is required that a software passes a test suite oracle
+	in order assess its compliance to a particular technology or standard.
+
+	\item Sometimes its simply easier to buy a test suite instead of developing
+	your own.
+\end{itemize}
+\end{block:fact}
+
+
+\hfill
+\refie{example:java-test-suite-oracle}{\beamerbutton{Example: Java TCK}}
+\end{frame}

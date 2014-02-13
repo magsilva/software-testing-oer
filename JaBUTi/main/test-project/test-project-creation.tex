@@ -1,0 +1,130 @@
+\begin{frame}[parent={cmap:jabuti-test-project},hasnext=true,hasprev=true,fragile]
+\frametitle{Test project}
+\framesubtitle{Create new test project}
+\label{procedure:create-test-project}
+
+\begin{block:fact}{Test project}
+\begin{itemize}
+	\item From the generated \srccode{.class} files, the user can create a
+	test project using JaBUTi.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:procedure}{Execute JaBUTi}
+\begin{enumerate}
+	\item Invoke JaBUTi's graphical interface.
+	\begin{itemize}
+		\item Double-click \srccode{Jabuti-bin.jar}.
+
+		\item Supposing that JaBUTi is installed on \srccode{/opt/JaBUTi},
+		it is possible to start the application from the command line:
+		\begin{lstlisting}
+			$ java -jar /opt/JaBUTi/Jabuti-bin.jar
+		\end{lstlisting}
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+\frametitle{Test project}
+\framesubtitle{Create new test project}
+\label{procedure:create-test-project}
+\label{concept:base-class}
+\label{concept:classpath}
+
+\begin{block:procedure}{Create new project}
+\begin{enumerate}
+	\item Select a base \srccode{.class} file from \srccode{File/Open Class}
+	menu.
+
+	\item Select the directory where the base class file is located, and then
+	select the base class file itself.
+
+	\item Check the \srccode{Package} field.
+	\begin{itemize}
+		\item Once the base class file is selected, the tool automatically
+		identifies the package that it belongs to and fills out the
+		\srccode{Package} field with the package's name.
+	\end{itemize}
+
+	\item Set the \srccode{Classpath} field.
+	\begin{itemize}
+		\item It should contain only the path necessary to run the selected
+		base class.
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Test project}
+\framesubtitle{Create new test project}
+\label{procedure:create-test-project}
+\label{concept:set-of-application-classes}
+\label{concept:classes-to-be-ignored}
+\label{concept:classes-to-be-tested}
+
+\begin{block:procedure}{Create new project}
+\begin{enumerate}
+	\setcounter{enumi}{5}
+	\item<1-> Click the \srccode{Open} button. The \srccode{ProjectManager}
+	windows will be displayed.
+	\begin{itemize}
+		\item From the selected base class file, the tool identifies the
+		complete set of classes necessary to its execution.
+	\end{itemize}
+
+	\item<2-> From the \srccode{Project Manager} window (left side), the user
+	can 	select the class files that will be tested.
+	\begin{itemize}
+		\item At least one class file must be selected.
+
+		\item The base class, if it is the driver, should not be selected.
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Test project}
+\framesubtitle{Create new test project}
+\label{procedure:create-test-project}
+
+\begin{block:procedure}{Create new project}
+\begin{enumerate}
+	\setcounter{enumi}{7}
+	\item<1-> A name must be given to the project being created by clicking on the
+	\srccode{Select} button.
+
+	\item<2-> Click the \srccode{Ok} button. After this action, JaBUTi will:
+	\begin{itemize}
+		\item create a new project,
+
+		\item construct the DUG for each method of each class under
+		testing,
+
+		\item derive the complete set of test requirements for each
+		criterion,
+
+		\item calculate the weight of each test requirement,
+
+		\item and show the bytecode of a class under testing.
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+
+\end{frame}
+
+
+
+\begin{frame}[c, ,hasnext=false]
+\frametitle{Test project demonstration}
+
+\insertmovie{resources/JaBUTi/JaBUTi-VendingMachine/JaBUTi-VendingMachine-NewProject/JaBUTi-VendingMachine-NewProject}
+
+\end{frame}

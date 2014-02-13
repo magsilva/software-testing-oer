@@ -1,0 +1,100 @@
+\begin{frame}[parent={cmap:jumble}, hasprev=false, hasnext=true]
+\frametitle{Jumble}
+
+\begin{block:concept}{Jumble}
+Jumble is a mutation testing tool. It mutates Java bytecode and tests it
+with JUnit test cases and suites.
+\end{block:concept}
+
+\begin{block:fact}{General information}
+\begin{itemize}
+	\item Available at \url{http://jumble.sourceforge.net}.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Jumble}
+\framesubtitle{Features}
+
+\begin{block:fact}{Features}
+\begin{itemize}
+	\item A single mutation is performed for each test case.
+
+	\item The following mutation operators are supported:
+	\begin{itemize}
+		\item conditionals,
+		\item binary arithmetic operations,
+		\item increments,
+		\item inline constants,
+		\item class pool constants,
+		\item return values,
+		\item switch statements.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Jumble}
+\framesubtitle{Installation}
+
+\begin{block:procedure}{Installation}
+\begin{enumerate}
+	\item Download Jumble from \url{http://jumble.sf.net} and unpack it.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Jumble}
+\framesubtitle{Test session configuration}
+
+\begin{block:fact}{Command line}
+\begin{itemize}
+	\item Jumble can be executed using the following command:
+	\begin{itemize}
+		\item \srccode{java -jar jumble.jar <options> <parameters>}
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Command line options}
+\begin{itemize}
+	\item \srccode{--classpath}: Defines the classpath required to run the
+	application under testing.
+	\item Options related to mutation operators:
+	\begin{itemize}
+		\item \srccode{--cpool}: Mutate constant pool entries.
+		\item \srccode{--increments}: Mutate increments.
+		\item \srccode{--inline-consts}: Mutate inline constants.
+		\item \srccode{--return-vals}: Mutate return values.
+		\item \srccode{--stores}: Mutate assignments.
+		\item \srccode{--switch}: Mutate switch cases
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Jumble}
+\framesubtitle{Test session configuration}
+
+\begin{block:fact}{Command line arguments}
+\begin{itemize}
+	\item The first argument is the class to be tested (full qualified name
+	of the class).
+	\item The second argument is a set of classes with JUnit test cases.
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Example}
+\begin{lstlisting}
+java -jar jumble.jar --classpath=. example/Mover example/MoverTest
+\end{lstlisting}
+\end{block}
+\end{frame}

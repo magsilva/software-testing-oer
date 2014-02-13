@@ -1,0 +1,12 @@
+digraph Sequence {
+label="If";
+node[label="",style=bold,shape=circle,style=filled,fontsize=12,fontname=Helvetica];
+edge[fontsize=12,fontname=Helvetica];
+fontsize=12;
+fontname=Helvetica;
+
+1 -> 2;
+1 -> 3;
+2 -> 4;
+3 -> 4;
+}

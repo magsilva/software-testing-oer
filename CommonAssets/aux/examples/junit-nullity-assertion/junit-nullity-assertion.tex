@@ -1,0 +1,23 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Nullity assertion}
+\label{example:junit-nullity-assertion}
+
+\begin{lstlisting}
+import org.junit.Test;
+import org.junit.Assert;
+
+public class NullityTestCase
+{
+  @Test
+  public void validate0() {
+    String s = null;
+    Assert.assertNull(s);
+  }
+
+  @Test
+  public void validate1() {
+    String s = "test";
+    Assert.assertNotNull(s);
+  }
+\end{lstlisting}
+\end{frame}

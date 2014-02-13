@@ -1,0 +1,19 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Timing assertion}
+\label{example:junit-timing-assertion}
+
+\begin{lstlisting}
+import org.junit.Test;
+import org.junit.Assert;
+
+public class EqualityTestCase
+{
+  @Test(timeout=1000)
+  public void validate0() {
+    int counter = 0;
+    for (int i = 0; i < 10;) {
+       counter += i;
+    }
+  }
+\end{lstlisting}
+\end{frame}

@@ -1,0 +1,56 @@
+\begin{frame}[parent={cmap:software-testing},hasnext=true,hasprev=true]
+\label{concept:test-requirement}
+\frametitle{Test requirement}
+
+\begin{block:concept}{Definition}
+A test requirement is a specific element of a software artifact that a test
+case must satisfy or cover.
+\end{block:concept}
+
+\begin{block:fact}{How a test requirement is created?}
+\begin{itemize}
+	\item Test requirements are derived from the program under testing using
+	a specific test criterion.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{What are test requirements for?}
+\begin{itemize}
+	\item A test requirement can:
+	\begin{itemize}
+		\item evaluate a test set, and
+		\item generate a test set.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[imacidii]
+\label{concept:test-set}
+\label{concept:c-adequate-test-set}
+\frametitle{Test requirement}
+\framesubtitle{Test set}
+
+\begin{block:concept}{Definition}
+A test set is a set of test cases.
+\end{block:concept}
+
+\begin{block:fact}{Test sets and test requirements}
+\begin{itemize}
+	\item A test set can be improved by adding test cases that exercise
+	uncovered requirements.
+	\begin{itemize}
+		\item The best test set is the smallest one that indicates the largest
+		set of faults.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block:concept}{C-adequate test sets}
+\begin{itemize}
+	\item When a test set $T$ satisfies all the test requirements derived from
+	a program using a given criterion $C$, $T$ is said $C-adequate$.
+\end{itemize}
+\end{block:concept}
+\end{frame}

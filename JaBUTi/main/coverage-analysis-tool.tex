@@ -1,0 +1,46 @@
+\begin{frame}[c,parent={cmap:jabuti-software-testing},hasnext=true,hasprev=false]
+\label{cmap:coverage-analysis-tool}
+\frametitle{Coverage analysis tool}
+
+\insertcmap{Courses-SoftwareTesting-JaBUTi-JaBUTiToolsCoverageAnalysis}
+\end{frame}
+
+
+\begin{frame}[parent={cmap:coverage-analysis-tool},hasnext=true,hasprev=true]
+\frametitle{Coverage analysis tool}
+\label{concept:coverage-analysis-tool}
+\label{concept:software-testing-tool}
+
+\begin{block:concept}{}
+JaBUTi's main tool is the coverage analysis tool. It uses test
+criteria from the structural test technique to create test requirements
+that a given test set must satisfy.
+\end{block:concept}
+
+\begin{block:procedure}{Basic workflow for coverage analysis}
+\begin{enumerate}
+	\item selection of classes to be tested;
+
+	\item test requirements creation;
+
+	\item visualization of test requirements, definition-use graph, and
+	related bytecode and source code;
+
+	\item instrumentation of classes to be tested;
+
+	\item specification and execution of test cases;
+
+	\item trace collection and coverage calculation;
+
+	\item test case management;
+
+	\item identification of infeasible test cases (test requirement
+	management).
+\end{enumerate}
+\end{block:procedure}
+
+\hfill
+\refie{example:jabuti-new-project}{\beamerbutton{Example: Create a new project}}
+\refie{example:jabuti-import}{\beamerbutton{Example: Import and run JUnit test set}}
+\end{frame}
+

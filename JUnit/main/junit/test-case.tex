@@ -1,0 +1,96 @@
+\begin{frame}[parent={concept:junit}, hasprev=false, hasnext=true]
+\frametitle{JUnit test case}
+\label{concept:junit-test-case}
+\label{concept:junit-testcase}
+
+
+\begin{block:concept}{Test case}
+A test case is a pair consisting of test data (a set of values, one for each
+input variable) to be input to the program and the expected output.
+\end{block:concept}
+
+\begin{block:concept}{JUnit test case}
+A JUnit test case is the implementation of a test case as a Java method
+annotated with \srccode{@org.junit.Test}.
+\end{block:concept}
+
+\begin{block:fact}{How to define a test case}
+\begin{itemize}
+	\item In general, each test case is defined in a different method within a
+	Java class.
+
+	\item Test methods neither accept parameters nor return a value.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:junit-testcase}{\beamerbutton{Example: JUnit test case}}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{JUnit test case}
+\framesubtitle{Compilation}
+\label{procedure:junit-test-case:compilation}
+
+\begin{block:procedure}{How to compile a test case}
+\begin{itemize}
+	\item To compile a test case, run the Java compiler against the test case
+	file.
+	\begin{itemize}
+		\item Remember to include the JUnit library in the classpath.
+	\end{itemize}
+\end{itemize}
+\end{block:procedure}
+
+\hfill
+\refie{example:junit-testcase-compilation}{\beamerbutton{Example: JUnit test case compilation}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{JUnit test case}
+\framesubtitle{Execution}
+\label{procedure:junit-test-case:execution}
+
+\begin{block:procedure}{How to run a test case}
+\begin{itemize}
+	\item To run JUnit test cases from the command line, run
+	\srccode{java org.junit.runner.JUnitCore TestClass1 TestClass2}.
+\end{itemize}
+\end{block:procedure}
+
+\hfill
+\refie{example:junit-testcase-execution}{\beamerbutton{Example: JUnit test case execution}}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{JUnit test case}
+\framesubtitle{Outcomes}
+\label{fact:junit-test-case:outcomes}
+
+
+\begin{block:fact}{Outcomes}
+\begin{itemize}
+	\item A test case fails when the generated output value is different than
+	the expected output value.
+
+	\item A test case succeeds when the generated output value is equal to the
+	expected output value.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{How does it detects a failures?}
+\begin{itemize}
+	\item A JUnit test case fails when an assertion fails (when an
+	\srccode{AssertionError} exception is thrown by the test case).
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:junit-testcase-outcomes}{\beamerbutton{Example: JUnit test case execution outcomes}}
+\end{frame}

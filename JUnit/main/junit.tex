@@ -1,0 +1,131 @@
+\begin{frame}[c, parent={cmap:software-testing}, hasprev=false, hasnext=false]
+\frametitle{JUnit}
+\label{cmap:junit}
+
+\insertcmap{Courses-SoftwareTesting-JUnit}
+\end{frame}
+
+
+\begin{frame}[parent={cmap:junit}, hasprev=false, hasnext=true]
+\frametitle{JUnit}
+\label{concept:junit}
+
+\begin{block:concept}{What is it?}
+JUnit is an open-source framework to provide support for documenting and
+automating the execution of test sets for Java programs.
+\end{block:concept}
+
+
+\begin{block:fact}{General information}
+\begin{itemize}
+	\item Developed by Kent Beck and Erich Gamma (in 1994).
+
+	\item Hosted at \url{http://www.junit.org/} and
+	\url{http://sf.net/projects/junit/}.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Features}
+\begin{itemize}
+	\item Test cases implemented using annotations.
+
+	\item Useful assertions collection.
+
+	\item Fixtures enhances the design of test sets.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:identifier-testcases-junit}{\beamerbutton{Example: Identifier}}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{JUnit}
+\framesubtitle{Installation}
+\label{procedure:junit:installation}
+
+
+\begin{block:fact}{Requirements}
+\begin{itemize}
+	\item JUnit requires the Java Development Kit version 1.5 or newer.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:procedure}{Download}
+\begin{enumerate}
+	\item Download JUnit at \url{http://sourceforge.net/projects/junit/}.
+	\begin{itemize}
+		\item Current version is 4.8.1.
+
+		\item The application is distributed as a JAR file (comprised of just
+		the JUnit library) and a compressed ZIP file (with the JUnit library
+		and documentation).
+
+		\item Download the ZIP file.
+	\end{itemize}
+
+	\item Uncompress the file on a given directory that you have written
+	permission.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{JUnit}
+\framesubtitle{Configuration}
+\label{procedure:junit:configuration}
+
+\begin{block:fact}{How to run it?}
+\begin{itemize}
+	\item To execute the JUnit application, you must add the JUnit library
+	(junit-4.8.1.jar) to the Java Classpath.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Classpath configuration}
+\begin{itemize}
+	\item You can add the library to the CLASSPATH environment variable.
+\begin{lstlisting}
+Unix: \srccode{export CLASSPATH=/opt/junit-4.8.1/junit-4.8.1.jar:$CLASSPATH}
+Windows: \srccode{set CLASSPATH=C:\junit-4.8.1\junit-4.8.1.jar;%CLASSPATH%}
+\end{lstlisting}
+
+	\item You can use the -cp option when running the tests. This is the
+	recommended option!
+\begin{lstlisting}
+java -cp /opt/junit-4.8.1/junit-4.8.1.jar <program>
+\end{lstlisting}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{JUnit}
+\framesubtitle{Shake down}
+\label{procedure:junit:shakedown}
+
+
+\begin{block:fact}{Is it working?}
+\begin{itemize}
+	\item To check whether JUnit was correctly installed, you can run the JUnit
+	test suite.
+	\begin{itemize}
+		\item The class with all the test cases for JUnit is
+		\srccode{org.junit.tests.AllTests}.
+
+		\item This class is located at the root of JUnit installation directory.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\hfill
+\refie{example:junit-shakedown}{\beamerbutton{Example: JUnit shakedown}}
+\end{frame}
+

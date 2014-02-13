@@ -1,0 +1,30 @@
+\begin{frame}[parent={cmap:jabuti-test-project},hasnext=true,hasprev=true,fragile]
+\frametitle{Test project}
+\framesubtitle{Compile Java application}
+\label{procedure:compile-java-application}
+
+\begin{block:fact}{Test project and JaBUTi}
+\begin{itemize}
+	\item<1-> JaBUTi requires the bytecode of application under testing. If
+	they are not available, the source code must be compiled beforehand.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:procedure}{Compilation procedure}
+\begin{enumerate}
+	\item<2-> Consider the Vending Machine example. To compile it, the following
+	command can be used:
+
+	\begin{lstlisting}
+		$ javac -g -d example example/vending/*.java
+	\end{lstlisting}
+
+	\item<3-> Observe that the debug option is activated (\srccode{-g}). JaBUTi
+	can make use of the debug information to ease the navigation between
+	graph and code.
+\end{enumerate}
+\end{block:procedure}
+
+% TODO: Include figure/animation comparing a test session with and without
+% debug information.
+\end{frame}

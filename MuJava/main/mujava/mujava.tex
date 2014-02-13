@@ -1,0 +1,137 @@
+\begin{frame}[parent={concept:mujava}, hasprev=false, hasnext=true]
+\frametitle{muJava}
+\framesubtitle{Installation}
+
+\begin{block:procedure}{Installation}
+\begin{enumerate}
+	\item Save muJava to a directory (for example, \srccode{/opt/mujava-3.0}).
+
+	\item Add muJava libraries (\srccode{mujava.jar} and \srccode{openjava2005.jar})
+	to the \srccode{CLASSPATH}.
+
+	\item Add the library \srccode{tools.jar}, distributed along Java SDK
+	(usually at \srccode{$JAVA_HOME/lib/tools.jar}), to the CLASSPATH.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{muJava}
+\framesubtitle{Test project configuration}
+
+\begin{block:procedure}{Test project configuration}
+\begin{enumerate}
+	\item Configure the file \srccode{mujava.config} with the directory
+	(absolute path) that MuJava will use for the test project data (for
+	example, \srccode{MuJava_HOME=/opt/mujava-3.0}).
+	\begin{itemize}
+		\item This file must be accessible from the \srccode{CLASSPATH}.
+
+		\item The value of \srccode{MuJava_HOME} must not have a trailing
+		slash (otherwise muJava will not work correctly).
+	\end{itemize}
+
+	\item Create the following directories at \srccode{MuJava_HOME}:
+	\srccode{classes}, \srccode{result}, \srccode{src}, and \srccode{testset}.
+
+	\item Copy the source code of the application under testing to the
+	directory \srccode{$MuJava_HOME/src}.
+
+	\item Copy the compiled classes of the application under testing to the
+	directory \srccode{$MuJava_HOME/classes}.
+
+	\item Copy the test cases to the directory \srccode{$MuJava_HOME/classes}.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{muJava}
+\frametitle{Mutation generation}
+
+\begin{block:procedure}{Mutant generation}
+\begin{enumerate}
+	\item Add the directory \srccode{$MuJava_HOME/classes} to the
+	\srccode{CLASSPATH}.
+
+	\item Run the command \srccode{java mujava.gui.GenMutantsMain}.
+
+	\item Select the files to be tested (or click the button labeled
+	\srccode{All} in the bottom left of the window).
+
+	\item Select the mutation operators to be used to generate the mutants.
+
+	\item Generate the mutants (using the yellow button in the bottom center
+	of the window).
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{muJava}
+\framesubtitle{Test case definition}
+
+\begin{block:fact}{Test case format}
+\begin{itemize}
+	\item Test cases must comprise of public classes with public methods.
+
+	\item The public methods represents each test case.
+	\begin{itemize}
+		\item The method name must start with \srccode{test}.
+	\end{itemize}
+
+	\item The methods must return some value (such as \srccode{String}).
+	\begin{itemize}
+		\item They cannot return \srccode{void}.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:procedure}{Test case definition}
+\begin{enumerate}
+	\item Implement the test cases.
+	\begin{itemize}
+		\item Save them to \srccode{$MuJava_HOME/testset}.
+	\end{itemize}
+
+	\item Compile the test cases.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{muJava}
+\framesubtitle{Test case execution}
+
+\begin{block:procedure}{Test case execution}
+\begin{enumerate}
+	\item Remove the directory \srccode{$MuJava_HOME/classes} of the
+	\srccode{CLASSPATH}.
+
+	\item Run the command \srccode{java mujava.gui.RunTestMain}.
+
+	\item Select the class to be tested.
+	\begin{itemize}
+		\item Even if the correct class is already selected, click on the combo
+		box and select it again, otherwise muJava will not recognize the
+		mutants previously generated.
+	\end{itemize}
+
+	\item Select the the type of mutants to be executed.
+	\begin{itemize}
+		\item If no class mutants has been generated, select just the option
+		\srccode{Execute only traditional mutants}, otherwise muJava will not
+		run the test cases.
+	\end{itemize}
+
+	\item Run the test cases by activating the yellow button (which is labeled
+	\srccode{RUN}).
+\end{enumerate}
+\end{block:procedure}
+\end{frame}

@@ -1,0 +1,24 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Condition matching assertion}
+\label{example:junit-condition-matching-assertion}
+
+\begin{lstlisting}
+import org.junit.Test;
+import org.junit.Assert;
+
+public class EqualityTestCase
+{
+	@Test
+	public void validate0() {
+		String s = "test";
+		assertThat(s, eq("test"));
+	}
+
+	@Test
+	public void validade1() {
+		String s = "test";
+		assertThat(s, isA(String.class));
+	}
+}
+\end{lstlisting}
+\end{frame}

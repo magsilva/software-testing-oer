@@ -1,0 +1,156 @@
+\begin{frame}[parent={concept:mujava}, hasprev=false, hasnext=true]
+\frametitle{MuClipse}
+
+\begin{block:concept}{MuClipse}
+MuClipse is an Eclipse Plugin which provides a bridge between the existing
+MuJava API and the Eclipse Workbench.
+\end{block:concept}
+
+\begin{block:fact}{Benefits}
+\begin{itemize}
+	\item Most of the configuration (source files, test files) are read from
+	Eclipse's project definition.
+
+	\item JUnit support.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Generation information}
+\begin{itemize}
+	\item Developed by B. Smith and L. Williams.
+
+	\item Main site:
+	\begin{itemize}
+		\item \url{http://muclipse.sourceforge.net/}
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{MuClipse}
+\framesubtitle{Installation}
+
+\begin{block:procedure}{Installation}
+\begin{enumerate}
+	\item Add a new update site to Eclipse:
+	\begin{itemize}
+		\item \url{http://muclipse.sf.net/site}
+	\end{itemize}
+
+	\item Select the update site just created.
+
+	\item Select the MuClipse feature and install it.
+
+	\item Restart the workbench after the installation.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{MuClipse}
+\framesubtitle{Project configuration}
+
+\begin{block:procedure}{Project configuration}
+\begin{enumerate}
+	\item Change all test case's methods annotated with \srccode{@Before} and
+	\srccode{@After} to public.
+
+	\item Check if you are using a Java runtime environment version 1.6 or
+	greater in the build configuration of your project.
+
+	\item Add the package \textbf{extendedOj} to the build path.
+	\begin{itemize}
+		\item \url{http://muclipse.sourceforge.net/site/extendedOJ.jar}
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{MuClipse}
+\framesubtitle{Mutant generation}
+
+\begin{block:procedure}{Mutant generation}
+\begin{enumerate}
+	\item Select the \srccode{Run as} operation in Eclipse and create a new
+	running configuration for \srccode{MuClipse: Mutants}.
+
+	\item Configure the directories.
+	\begin{itemize}
+		\item It is highly recommended to leave the configuration to its
+		default.
+
+		\item So, you must change your project configuration to output the
+		classes to a single directory (\srccode{bin}).
+
+		\item Type the name of class you want to test in the field
+		\srccode{Class to Mutate}.
+	\end{itemize}
+
+	\item Select the mutation operators to be used.
+
+	\item Execute the new run configuration!
+	\begin{itemize}
+		\item If you get an \srccode{error=12, Cannot allocate memory}
+		exception and you are using Linux, run the following command in the
+		system shell: \srccode{echo 0 > /proc/sys/vm/overcommit_memory}.
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{MuClipse}
+\framesubtitle{Test execution}
+
+\begin{block:procedure}{Test execution}
+\begin{enumerate}
+	\item Select the \srccode{Run as} operation in Eclipse and create a new
+	running configuration for \srccode{MuClipse: Tests}.
+
+	\item Configure the directories.
+	\begin{itemize}
+		\item Set the name of the directory where the test cases (their
+		source code) are stored.
+
+		\item Select the target class (the class for which you generated the
+		mutants).
+
+		\item Select the test case (JUnit class) to be executed.
+	\end{itemize}
+
+	\item Configure the testing options.
+	\begin{itemize}
+		\item If no mutant was generated for a given mutant operator type
+		(method or class), unselect it (otherwise the execution will not work
+		correctly).
+	\end{itemize}
+
+	\item Execute the new run configuration.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{MuClipse}
+\framesubtitle{View test results}
+
+\begin{block:procedure}{View test results}
+\begin{enumerate}
+	\item Select the \srccode{Mutants and Results} view at Windows / Show view /
+	Other menu.
+
+	\item Click on the right yellow arrow on the right to reload the latest
+	results of test case execution.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}

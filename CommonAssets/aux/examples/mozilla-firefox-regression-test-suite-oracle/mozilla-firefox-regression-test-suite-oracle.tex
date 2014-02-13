@@ -1,0 +1,29 @@
+\begin{frame}[hasprev=false, hasnext=false]
+\label{example:mozilla-firefox-regression-test-suite-oracle}
+\frametitle{Regression test suite oracle example}
+
+\begin{itemize}
+	\item Mozilla runs build computers that continually build the latest source
+	code.
+
+	\item A tool, called Thinderbox, collects the test results and compare to
+	the previous version of the product under testing.
+
+	\item It uses tables to describe status of the source tree for the
+	platform, product, and code branch:
+	\begin{itemize}
+	\item 1
+		\item The green bar means the latest code compiles and passes the tests
+		that are run on the box.
+		\item Red means the build failed during compilation.
+		\item Orange means the binary was built successfully, but failed some
+		of the tests.
+		\item Yellow means the build and testing are in progress.
+	\end{itemize}
+
+	\item Tinderbox for Firefox:
+	\begin{itemize}
+		\item \url{http://tinderbox.mozilla.org/showbuilds.cgi?tree=Firefox}
+	\end{itemize}
+\end{itemize}
+\end{frame}

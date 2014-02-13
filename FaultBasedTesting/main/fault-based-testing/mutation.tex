@@ -1,0 +1,125 @@
+\begin{frame}[parent={concept:fault-based-testing},hasprev=false,hasnext=true]
+\frametitle{Mutation testing}
+
+\begin{block:concept}{Mutation testing}
+Mutation testing is a fault-based test criterion that uses a set of products
+that differ slightly from product P under testing, named mutants, in order
+to evaluate the adequacy of a test set T.
+\end{block:concept}
+
+\begin{block:fact}{Effectiveness}
+\begin{itemize}
+	\item Mutation testing criterion is one of the most effective test
+	criteria in detecting faults.
+
+    \item It is frequently used to evaluate the quality of other
+    testing criteria.
+
+	\item It is frequently used to evaluate the efficacy of a test set.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true,hasnext=true]
+\frametitle{Mutation testing}
+
+\begin{block:fact}{Rationale}
+\begin{itemize}
+	\item Mutation testing is based upon two principles:
+	\begin{itemize}
+		\item The competent programmer hypothesis.
+
+		\item Coupling effect
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mutantion testing}
+\framesubtitle{Competent programmer hypothesis}
+
+\begin{block:principle}{Competent programmer hypothesis}
+A good programmer writes correct or close-to-correct programs.
+\end{block:principle}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mutantion testing}
+\framesubtitle{Coupling effect}
+
+\begin{block:principle}{Coupling effect}
+Complex errors are composition of simple ones.
+\end{block:principle}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Mutation testing}
+
+\begin{block:fact}{Goal}
+\begin{itemize}
+    \item The goal of mutation testing is to find a test set which is able to
+    reveal the differences between a product P and its mutants (making them
+    behave differently).
+
+	\item The ideal situation in mutation testing would reveal all the mutants
+	ead, which would indicate that the test set T is adequate for testing P.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mutation testing}
+
+\begin{block:procedure}{Mutation testing basic procedure}
+\begin{enumerate}
+	\item The tester should provide a product under testing P and a test set.
+
+ 	\item The program is executed against T and, if a failure occurs, a fault
+ 	has been revealed and the test is over.
+
+	\item If no problem is observed, P may still have hidden faults that T is
+	unable to reveal.
+	\begin{itemize}
+		\item In this case, P is submitted to a set of mutation operators which
+		transform P into a set of products called mutants of P.
+	\end{itemize}
+
+	\item Mutants are executed against the same test set T, generating either
+	live mutants or dead mutants.
+
+	\item After executing the mutants and identifying the equivalent ones, an
+	objective measure of test set adequacy is provided by the mutation score.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}[hasprev=false,hasnext=false]
+\frametitle{Mutation testing}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item The main problem with the mutation testing is the high number of
+	generated mutants and, therefore, the high cost of executing a large number
+	of mutants.
+
+	\item Mutation testing faces the problem of deciding mutant equivalence
+	which in general is undecidable.
+
+	\item Mutation testing requires tester intervention in order to determine
+	equivalent mutants.
+	\begin{itemize}
+		\item Mutation testing requires good knowledge about the product
+		implementation to ease the task of analyzing live mutants.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}

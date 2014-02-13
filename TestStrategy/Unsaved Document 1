@@ -1,0 +1,7 @@
+The key issue of testing, considering constraints on time and cost, is defining a minimum test set that has they highest probability of detecting the most errors~\cite{p. 43]{myers:2004}.
+
+Since exhaustive testing is out of question, the objective should be to maximize the yield on the testing investment by maximizing the number of errors found by a finite number of test cases.
+
+Given constraints on time and cost, the key issue of testing becomes: ``What subset of all possible test cases has the highest probability of detecting the most errors?''~\cite[p. 44]{myers:2004}
+
+As pointed out by ~\citeonline[p. 44]{myers:2004}, the recommended strategy is to develop test cases using functional testing and then develop supplementary test cases as necessary with structural testing.

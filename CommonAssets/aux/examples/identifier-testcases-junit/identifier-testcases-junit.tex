@@ -1,0 +1,144 @@
+\begin{frame}[hasprev=false, hasnext=true]
+\frametitle{Identifier}
+\label{example:identifier-testcases-junit}
+
+\begin{itemize}
+	\item The program determines if a given identifier is valid or not in a
+	variant of Pascal language, called Silly Pascal.
+
+	\item A valid identifier must begin with a letter and must contain only
+	letter or digits.
+
+	\item Moreover, it must have at least one character and no more than six
+	characters.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile, hasprev=true, hasnext=true]
+\frametitle{Identifier}
+\framesubtitle{Test set fixture}
+
+
+\begin{lstlisting}
+package identifier;
+
+import org.junit.Test;
+import org.junit.Assert;
+
+public abstract class IdentifierTestSet
+{
+  protected Identifier id;
+
+  @Before
+  public void setUp() {
+    id = new Identifier();
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Identifier}
+\framesubtitle{Test set 1}
+
+\begin{lstlisting}
+package identifier;
+
+import org.junit.*
+
+public class IdentifierTestSet1 extends IdentifierTestSet
+{
+  @Test
+  public void validate1() {
+    boolean result = id.validateIdentifier("Abcd5");
+    Assert.assertEquals(true, result);
+  }
+
+  @Test
+  public void validate2() {
+    boolean result = id.validateIdentifier("x12345");
+    Assert.assertEquals(true, result);
+  }
+
+  @Test
+  public void validate3() {
+    boolean result = id.validateIdentifier("&123");
+    Assert.assertFalse(result);
+  }
+
+  @Test
+  public void validate4() {
+    boolean result = id.validateIdentifier("Inv@lido");
+    Assert.assertFalse(result);
+  }
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Identifier}
+\framesubtitle{Test set 2}
+
+\begin{lstlisting}
+package identifier;
+
+import org.junit.*;
+
+public class IdentifierTestSet2  extends IdentifierTestSet
+{
+  @Test
+  public void validate5() {
+    Assert.assertNotNull(id);
+  }
+
+  @Test(expected=IndexOutOfBoundsException.class)
+  public void stringException() {
+    String str = new String("JUnit Example");
+    str.substring(30);
+  }
+
+  @Test(timeout=2000)
+  public void looping() {
+    boolean result = id.validateIdentifier("Abcd5");
+    Assert.assertEquals(true, result);
+  }
+
+  @Ignore("Out of the program scope")
+  @Test(expected=IndexOutOfBoundsException.class)
+  public void stringException2() {
+    String str = new String("JUnit Example");
+     str.substring(30);
+   }
+}
+\end{lstlisting}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile, hasprev=true, hasnext=false]
+\frametitle{Identifier}
+\framesubtitle{Test set 2}
+
+\begin{lstlisting}
+package identifier;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+    IdentifierTestSet1.class,
+    IdentifierTestSet2.class
+})
+
+public class AllTests  {
+}
+\end{lstlisting}
+\end{frame}

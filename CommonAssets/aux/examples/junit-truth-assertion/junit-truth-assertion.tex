@@ -1,0 +1,25 @@
+\begin{frame}[fragile, hasprev=false, hasnext=false]
+\frametitle{Truth assertion}
+\label{example:junit-truth-assertion}
+
+\begin{lstlisting}
+import org.junit.Test;
+import org.junit.Assert;
+
+public class TruthTestCase
+{
+  @Test
+  public void validate0() {
+    String s1 = "test";
+    String s2 = "test"
+    Assert.assertFalse(s1 == s2);
+  }
+
+  @Test
+  public void validate1() {
+    String s = "test";
+    Assert.assertTrue(s == s);
+  }
+}
+\end{lstlisting}
+\end{frame}

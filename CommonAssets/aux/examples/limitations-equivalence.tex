@@ -1,0 +1,38 @@
+\subsection*{Equivalent software}
+\label{example:limitation-equivalence}
+
+
+\begin{frame}[imacidie, fragile]
+\frametitle{Equivalent software}
+
+These two programs are equivalent, though not equal (\srccode{k} is
+initialized with a different value in each program).
+
+\begin{lstlisting}
+public class Factorial {
+    public static long compute(int x) throws NegativeNumberException {
+        if (x >= 0) {
+            long r = 1;
+            for (int k = 2; k <= x; k++) 
+                r *= k;
+            return r;
+        } else 
+            throw new NegativeNumberException();
+    }
+}
+
+public class Factorial {
+    public static long compute(int x) throws NegativeNumberException {
+        if (x >= 0) {
+            long r = 1;
+            for (int k = 1; k <= x; k++) 
+                r *= k;
+            return r;
+        } else 
+            throw new NegativeNumberException();
+    }
+}
+\end{lstlisting}
+
+\end{frame}
+

@@ -1,0 +1,90 @@
+\pdfminorversion=7
+\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+
+\usepackage{lode-i18n}
+\usepackage{lode-srccode}
+\usepackage{lode-imacid}
+\usepackage{lode-pdf}
+
+\usepackage{animate}
+
+\title{Software testing}
+\subtitle{Basic concepts}
+\author[]{%
+Marco Aurélio Graciotto Silva\inst{1}, \and
+Ellen Francine Barbosa\inst{1}, \\\and
+Márcio Eduardo Delamaro\inst{1}, \and
+Auri Marcelo Rizzo Vincenzi\inst{2}, \\\and
+José Carlos Maldonado\inst{1}}
+
+\newcommand{\numberofinstitutes}{2}
+\institute[ICMC]
+{
+	\inst{1}%
+%	\textbf{Institute of Mathematical Sciences and Computing}\\
+	University of São Paulo (USP)\\
+	São Carlos, SP, Brazil
+	\and
+	\inst{2}%
+%	\textbf{Institute of Informatics}\\
+	Federal University of Goiás (UFG)\\
+	Goiânia, GO, Brazil
+}
+
+\date[]{February 2011}
+
+\logopicture{resources/Logo/icmc-qualipso-inf}
+
+\begin{document}
+
+\frontmatter{}
+\include{preamble}
+
+\mainmatter{}
+
+\part{Software Testing}
+\section{Software testing}
+\include{main/software-testing}
+
+\subsection{Defect}
+\include{main/software-testing/defect}
+
+\subsection{Software testing}
+\include{main/software-testing/software-testing}
+
+\subsection{Defect taxonomy}
+\include{main/software-testing/defect-taxonomy}
+
+\subsection{Test case}
+\include{main/software-testing/test-case}
+
+\subsection{Oracle}
+\include{main/software-testing/oracle}
+
+\subsection{Test phase}
+\include{main/software-testing/test-phase}
+
+\subsection{Test criterion}
+\include{main/software-testing/test-criterion}
+
+\subsection{Test requirement}
+\include{main/software-testing/test-requirement}
+
+\subsection{Test technique}
+\include{main/software-testing/test-technique}
+
+\subsection{Software testing process}
+\include{main/software-testing/software-testing-process}
+
+
+\part{References and credits}
+\backmatter{}
+\include{bibliography}
+\include{credits}
+
+
+\part{Instructional elements}
+\include{examples}
+\include{exercises}
+
+\end{document}

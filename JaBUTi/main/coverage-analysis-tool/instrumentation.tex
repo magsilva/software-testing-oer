@@ -1,0 +1,37 @@
+\begin{frame}[parent={cmap:coverage-analysis-tool},hasnext=true,hasprev=true]
+\frametitle{Coverage analysis tool}
+\framesubtitle{Instrumentation of classes to be tested}
+\label{concept:jabuti-instrumentation}
+
+\begin{block:procedure}{Instrumentation}
+\begin{enumerate}
+	\item Before running the test cases, JaBUTi need to instrument the classes
+	under testing.
+	\begin{itemize}
+		\item Instrumentation is required to insert probe instructions (that
+		will generate the trace file).
+	\end{itemize}
+
+	\item Instrumentation can done either by select \srccode{File / Save
+	instrumented classes} or when importing test cases.
+	\begin{itemize}
+		\item If the set of selected or ignored classes were changed after the
+		generation of a package of instrumented classes, you must use the
+		\srccode{Save instrumented classes} menu.
+	\end{itemize}
+
+	\item A package (.jar) will be created with the instrumented classes.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Coverage analysis tool}
+\framesubtitle{Instrumentation of classes to be tested}
+
+\begin{block}{Example}
+\insertmovie{resources/JaBUTi/JaBUTi-VendingMachine/JaBUTi-VendingMachine-Instrumentation/JaBUTi-VendingMachine-Instrumentation}
+\end{block}
+\end{frame}
+

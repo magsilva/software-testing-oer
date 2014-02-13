@@ -1,0 +1,45 @@
+\begin{frame}[parent={concept:junit}, hasprev=false, hasnext=true]
+\frametitle{Assertion}
+\label{concept:assertion}
+\label{concept:junit-assertion}
+
+\begin{block:concept}{Assertion}
+An assertion is a statement that evaluates as true.
+\end{block:concept}
+
+\begin{block:fact}{}
+\begin{itemize}
+	\item Assertions work as oracles: they confront obtained and expected
+	outputs, pointing any discrepancies, and enabling the automatic test
+	cases execution.
+
+	\item JUnit only records failed assertions.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:junit-raw-assertion}{\beamerbutton{Example: Test case with assertion}}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Assertion}
+\framesubtitle{JUnit assertions}
+
+\begin{block:fact}{JUnit assertions}
+\begin{itemize}
+	\item Instead of using Java's default assertion mechanism, one can use
+	assertions provided by JUnit.
+
+	\item JUnit implements several assertions in the class \srccode{Assert}:
+	\begin{itemize}
+		\item \srccode{assertThat}
+		\item \srccode{assertArrayEquals}, \srccode{assertEquals}
+		\item \srccode{assertSame}, \srccode{assertNotSame}
+		\item \srccode{assertTrue}, \srccode{assertFalse}
+		\item \srccode{assertNull}, \srccode{assertNotNull}
+		\item \srccode{fail}
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}

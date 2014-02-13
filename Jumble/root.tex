@@ -1,0 +1,57 @@
+\pdfminorversion=7
+\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+
+\usepackage{lode-i18n}
+\usepackage{lode-srccode}
+\usepackage{lode-imacid}
+\usepackage{lode-pdf}
+
+\usepackage{animate}
+\usepackage{movie15}
+
+\title{Software testing}
+\subtitle{Jumble}
+\author[]{%
+Marco Aurélio Graciotto Silva\inst{1}, \and
+Ellen Francine Barbosa\inst{1}, \\\and
+José Carlos Maldonado\inst{1}}
+
+\newcommand{\numberofinstitutes}{2}
+\institute[ICMC]
+{
+	\inst{1}%
+%	\textbf{Institute of Mathematical Sciences and Computing}\\
+	University of São Paulo (USP)\\
+	São Carlos, SP, Brazil
+}
+
+\date[]{February 2011}
+
+\logopicture{figs/icmc-qualipso-inf}
+
+\begin{document}
+
+\frontmatter{}
+\include{preamble}
+
+
+
+\mainmatter{}
+\part{Jumble}
+\section{Jumble}
+\include{main/jumble}
+
+
+
+
+\backmatter{}
+\part{References and credits}
+\include{bibliography}
+\include{credits}
+
+\part{Instructional elements}
+\include{examples}
+\include{exercises}
+
+
+\end{document}

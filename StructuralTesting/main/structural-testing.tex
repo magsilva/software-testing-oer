@@ -1,0 +1,100 @@
+\begin{frame}[parent={cmap:software-testing}, hasprev=false, hasnext=true]
+\frametitle{Structural testing}
+\label{cmap:structural-software-testing}
+\label{cmap:structural-testing}
+
+\insertcmap{Courses-SoftwareTesting-StructuralTesting}
+\end{frame}
+
+
+
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Structural testing}
+\label{concept:structural-testing}
+
+\begin{block:concept}{Definition}
+Structural testing is a technique in which testing is based on the
+internal paths, structure, and implementation of the software under test.
+\end{block:concept}
+
+\begin{block:fact}{White-box testing}
+As structural testing must see the inner details of the software, it is also
+known as white box testing.
+\end{block:fact}
+
+\begin{block:fact}{Why is structural testing important?}
+\begin{itemize}
+	\item Structural testing has efficacy on determine logical or programming
+	faults in the program under testing, specially at the unit level.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Structural testing}
+
+\begin{block:concept}{Limitations}
+\begin{itemize}
+	\item Structural testing requires detailed programming skills.
+	\begin{itemize}
+		\item Structural testing requires tester intervention in order to
+		determine infeasible paths.
+	\end{itemize}
+
+	\item The number of execution paths may be so large that they cannot all be
+	tested.
+
+	\item The test cases chosen may not detect data sensitivity errors.
+
+	\item Structural testing assumes that control flow is correct (or very
+	close to correct). Since the tests are based on the existing paths, nonexistent
+	paths cannot be usually discovered through structural testing.
+\end{itemize}
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Structural testing}
+
+\begin{block:fact}{When can I use structural testing?}
+\begin{itemize}
+	\item Structural testing can be applied at unit, integration, and system
+	testing phases.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:fact}{Structural testing and test phases}
+\begin{itemize}
+	\item Structural testing, when applied at the unit testing phase,
+	involves paths that are within a module.
+
+	\item Structural testing, when applied at the integration testing phase,
+	involves paths that are between modules within subsystems and paths
+	between subsystems within systems.
+
+	\item Structural testing, when applied at the system testing phase,
+	involves paths that are between entire systems.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Structural testing}
+
+\begin{block:procedure}{Test activities}
+\begin{enumerate}
+	\item The program under testing implementation is analyzed.
+	\item Paths through the program under testing are identified.
+	\item Inputs are chosen to cause the program under testing to execute
+	selected paths. This is called path sensibilization.
+	\item Expected outputs for those inputs are determined.
+	\item The tests are run.
+	\item Actual outputs are compared with the expected outputs, verifying if
+	the the actual output is correct.
+\end{enumerate}
+\end{block:procedure}
+\end{frame}

@@ -1,0 +1,42 @@
+digraph mccabe {
+   size="8,14"; 
+   ratio=auto;
+   ranksep=0.1;
+   rank=LR;
+   node[shape=circle,fontsize=12,fontname=Helvetica];
+edge[fontsize=12,fontname=Helvetica];
+fontsize=12;
+fontname=Helvetica;
+
+   A -> B;
+   A -> C;
+   B -> D;
+   C -> D;
+
+   D -> E;
+   D -> F;
+
+   E -> G;
+   E -> H;
+   G -> K;
+   H -> K;
+
+   K -> M;
+   K -> N;
+
+   M -> Q;
+   N -> Q;
+
+   F -> I;
+   F -> J;
+   I -> L;
+   J -> L;
+
+   L -> O;
+   L -> P;
+   O -> R;
+   P -> R;
+
+   Q -> S;
+   R -> S;
+}

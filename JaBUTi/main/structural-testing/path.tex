@@ -1,0 +1,65 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Path}
+\label{concept:path}
+
+\begin{block:concept}{Informal definition}
+A path is a sequence of statements.
+\end{block:concept}
+
+\begin{block:concept}{Definition}
+A path is a finite sequence of nodes $(n_1, n_2, . . . , nk)$,
+$k \geqslant 2$, so that there is an edge from $n_i$ to $n_i + 1$ for
+$i = 1, 2, ... , k - 1$.
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Path}
+\framesubtitle{Executable and infeasible path}
+\label{concept:infeasible-path}
+\label{concept:missing-path}
+
+\begin{block:concept}{Definition}
+An executable path is a path for which it exists an input data that can
+execute it.
+\end{block:concept}
+
+\begin{block:concept}{Definition}
+An infeasible path is a path that, for any input value, cannot be executed.
+\end{block:concept}
+
+\begin{block:fact}{Limitations and implications}
+\begin{itemize}
+	\item It is impossible to determine, automatically, infeasible paths.
+
+	\item Any complete path that includes an infeasible path is an
+	infeasible path.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:identifier-infeasible-path}{\beamerbutton{Example: Infeasible path example for Identifier}}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Path}
+\framesubtitle{Definition-clear path}
+\label{concept:definition-clear-path}
+
+\begin{block:concept}{Informal definition}
+A definition-clear path is a path which no other variable definition is made.
+\end{block:concept}
+
+\begin{block:concept}{Definition}
+A definition-clear path with respect to a variable $x$ is a path between two
+nodes $A$ and $B$, being $x$ defined in $A$, with an use in $B$ and with no
+other definition of $x$ in the other nodes present in the path between $A$ and
+$B$.
+\end{block:concept}
+
+\hfill
+\refie{example:identifier-def-clear-path}{\beamerbutton{Example: Definition-clear path for Identifier}}
+\end{frame}

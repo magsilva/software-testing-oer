@@ -1,0 +1,191 @@
+\pdfminorversion=7
+\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+
+\usepackage{lode-i18n}
+\usepackage{lode-srccode}
+\usepackage{lode-imacid}
+\usepackage{lode-pdf}
+
+\usepackage{animate}
+
+\title{Software testing}
+\subtitle{JaBUTi}
+\author[]{%
+Marco Aurélio Graciotto Silva\inst{1}, \and
+Ellen Francine Barbosa\inst{1}, \\\and
+Márcio Eduardo Delamaro\inst{1}, \and
+Auri Marcelo Rizzo Vincenzi\inst{2}, \\\and
+José Carlos Maldonado\inst{1}}
+
+\newcommand{\numberofinstitutes}{2}
+\institute[ICMC]
+{
+	\inst{1}%
+%	\textbf{Institute of Mathematical Sciences and Computing}\\
+	University of São Paulo (USP)\\
+	São Carlos, SP, Brazil
+	\and
+	\inst{2}%
+%	\textbf{Institute of Informatics}\\
+	Federal University of Goiás (UFG)\\
+	Goiânia, GO, Brazil
+}
+
+\date[]{February 2011}
+
+\logopicture{figs/icmc-qualipso-inf}
+
+
+\begin{document}
+
+\frontmatter{}
+\include{preamble}
+
+\mainmatter{}
+
+% JaBUTi and software testing
+%
+\part{JaBUTi and Testing}
+\section{JaBUTi and Testing}
+\include{main/jabuti-testing}
+
+
+% JaBUTi overview module
+%
+\part{JaBUTi}
+\section{JaBUTi}
+\include{main/jabuti}
+
+\subsection{Resources}
+\include{main/jabuti/resources}
+
+\subsection{Licensing}
+\include{main/jabuti/licensing}
+
+\subsection{Architecture}
+\include{main/jabuti/architecture}
+
+
+
+% JaBUTi - Graphical user interface
+%
+\part{User interface}
+\section{Graphical user interface}
+\include{main/graphical-user-interface}
+
+\subsection{File menu}
+\include{main/graphical-user-interface/file}
+
+\subsection{Tools menu}
+\include{main/graphical-user-interface/tools}
+
+\subsection{Visualization menu}
+\include{main/graphical-user-interface/visualization}
+
+\subsection{Summary menu}
+\include{main/graphical-user-interface/summary}
+
+\subsection{Test Case menu}
+\include{main/graphical-user-interface/test-case}
+
+\subsection{Reports menu}
+\include{main/graphical-user-interface/reports}
+
+\subsection{Properties Menu}
+\include{main/graphical-user-interface/properties}
+
+\subsection{Update Menu}
+\include{main/graphical-user-interface/update}
+
+\subsection{Help Menu}
+\include{main/graphical-user-interface/help}
+
+% \section{Command line user interface}
+%
+%
+
+% JaBUTi project
+%
+\part{Test project}
+\section{Test project}
+\include{main/test-project}
+
+\subsection{Test project requirements}
+\include{main/test-project/test-project-requirements}
+
+\subsection{Test project creation}
+\include{main/test-project/test-project-creation}
+
+
+
+% JaBUTi coverage analysis
+%
+\part{Coverage analysis tool}
+\section{Coverage analysis tool}
+\include{main/coverage-analysis-tool}
+
+\subsection{Class selection}
+\include{main/coverage-analysis-tool/class-selection}
+
+\subsection{Test requirement generation}
+\include{main/coverage-analysis-tool/test-requirement-generation}
+
+\subsection{Visualization}
+\include{main/coverage-analysis-tool/visualization}
+
+\subsection{Instrumentation}
+\include{main/coverage-analysis-tool/instrumentation}
+
+\subsection{Execution of test cases}
+\include{main/coverage-analysis-tool/execution-test-cases}
+
+\subsection{Execution trace}
+\include{main/coverage-analysis-tool/execution-trace}
+
+\subsection{Test case management}
+\include{main/coverage-analysis-tool/test-case-management}
+
+\subsection{Test requirement management}
+\include{main/coverage-analysis-tool/test-requirement-management}
+
+\subsection{Report}
+\include{main/coverage-analysis-tool/report}
+
+\subsection{Review}
+\include{main/coverage-analysis-tool/review}
+
+
+% JaBUTi metrics tool
+%
+\part{Measurement tool}
+\section{Measurement tool}
+\include{main/static-metrics-tool}
+
+\subsection{Metrics}
+\include{main/static-metrics-tool/metrics}
+
+\subsection{Test strategy}
+\include{main/static-metrics-tool/test-strategy}
+
+\subsection{Review}
+\include{main/static-metrics-tool/review}
+
+
+% JaBUTi slicing tool
+%
+\part{Slicing tool}
+\section{Slicing tool}
+\include{main/slicing-tool}
+
+
+
+\backmatter{}
+\part{References and credits}
+\include{bibliography}
+\include{credits}
+
+\part{Instructional elements}
+\include{examples}
+\include{exercises}
+
+\end{document}

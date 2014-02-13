@@ -1,0 +1,152 @@
+\begin{frame}[parent={concept:mujava}, hasprev=false, hasnext=true]
+\frametitle{Class operators}
+
+\begin{block:concept}{Class operators}
+Class-level mutation operators apply simple syntactical modifications to the
+classes of the application under testing.
+\end{block:concept}
+
+\begin{block:fact}{Affected elements}
+\begin{itemize}
+	\item Based on language features related to object orientation, four
+	groups of operatores are defined:
+	\begin{itemize}
+		\item Encapsulation.
+		\item Inheritance.
+		\item Polymorphism.
+		\item Java-specific features.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Class operators}
+\framesubtitle{Encapsulation}
+
+
+\begin{block:fact}{Rationale}
+\begin{itemize}
+	\item It exploits the following facts:
+	\begin{itemize}
+		\item the semantics of the various access levels are often poorly
+		understood,
+
+		\item the access for variables and methods is often not considered
+		during design.
+	\end{itemize}
+
+	\item Although poor access definition do not always cause faults, it can
+	lead to faulty behaviour when the class is integrated with other classes.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Operators}
+\begin{itemize}
+	\item \textbf{AMC} (Access modifier change): it changes the access level
+	for instance variables and methods.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Class operators}
+\framesubtitle{Inheritance}
+
+
+\begin{block:fact}{Rationale}
+\begin{itemize}
+	\item Incorrect use of inheritance can lead to faults (variable shadowing,
+	method overriding, parent access and constructors).
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Operators}
+\begin{itemize}
+	\item Variable shadowing:
+	\begin{itemize}
+		\item Hiding variable deletion (\textbf{IHD}) and insertion
+		(\textbf{IHI}).
+	\end{itemize}
+
+	\item Method overriding:
+	\begin{itemize}
+		\item Overriding method deletion (\textbf{IOD}), change in position
+		(\textbf{IOP}), and renaming (\textbf{IOR}).
+	\end{itemize}
+
+	\item Parent access:
+	\begin{itemize}
+		\item \srccode{super} keyword insertion (\textbf{ISI}) and deletion
+		(\textbf{ISD}).
+	\end{itemize}
+
+	\item Constructor:
+	\begin{itemize}
+		\item Explict call to a parent's constructor deletion (\textbf{IPC}).
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Class operators}
+\framesubtitle{Polymorphism}
+
+
+\begin{block:fact}{Rationale}
+\begin{itemize}
+	\item Polymorphism allows the late binding of types to the object that will
+	be actually accessed.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Operators}
+\begin{itemize}
+	\item Create a new object using a child type (\textbf{PNC}).
+	\item Declare a variable using the parent class type (\textbf{PMD}).
+	\item Declare parameter using the parent class type (\textbf{PPD}).
+	\item Type cast operator insertion (\textbf{PCI}), delection (\textbf{PCD}),
+	and change (\textbf{PCC}).
+	\item Reference assignment with other compatible type (\textbf{PRV}).
+	\item Overloading method contents modification (\textbf{OMR}), and deletion
+	(\textbf{OMD}).
+	\item Overloading argument change (\textbf{OAC}).
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{Class operators}
+\framesubtitle{Java-specific features}
+
+
+\begin{block:fact}{Types of expression operators}
+\begin{itemize}
+	\item Some mistakes are not due to intrinsic object-orientation features,
+	but of Java-specific ones.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Operators}
+\begin{itemize}
+	\item \srccode{this} keyword insertion (\textbf{JTI}) and deletion
+	\textbf{JTD}).
+	\item \srccode{static} keyword insertion (\textbf{JSI}) and deletion
+	(\textbf{JSD}).
+	\item Member variable initialization deletion (\textbf{JID}).
+	\item Java-supported default constructor creation (\textbf{JDC}).
+	\item Reference assignment and content assignment replacement
+	(\textbf{EOA}).
+	\item Reference comparison and content comparison replacement
+	(\textbf{EOC}).
+	\item Accessor method change (\textbf{EAM}).
+	\item Modifierr method change (\textbf{EMM}).
+\end{itemize}
+\end{block:fact}
+\end{frame}

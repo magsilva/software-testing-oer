@@ -1,0 +1,23 @@
+\begin{frame}[parent={concept:junit}, hasprev=false, hasnext=false]
+\frametitle{JUnit test suite and suite runner}
+\label{concept:junit-test-suite}
+\label{concept:test-suite}
+
+\begin{block:concept}{Test suite}
+A JUnit test suite is a class that contains tests from many JUnit test
+cases classes.
+\end{block:concept}
+
+\begin{block:procedure}{How to define a test suite?}
+\begin{itemize}
+	\item To create a JUnit test suite, the class (which is usually empty)
+	should be annotated with \srccode{@SuiteClasses({TestClass1.class, ...})}.
+
+	\item To run the JUnit test suite, the class must be annotated with
+	\srccode{@RunWith(Suite.class)}
+\end{itemize}
+\end{block:procedure}
+
+\hfill
+\refie{example:junit-test-suite}{\beamerbutton{Example: JUnit test suite}}
+\end{frame}

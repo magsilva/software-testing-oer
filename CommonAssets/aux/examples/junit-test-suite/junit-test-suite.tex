@@ -1,0 +1,32 @@
+\begin{frame}[fragile, hasprev=false, hasnext=true]
+\frametitle{JUnit test suite example}
+\framesubtitle{Test suite definition}
+\label{example:junit-test-suite}
+
+\begin{lstlisting}
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({
+    ExampleTestCase.class
+})
+public class AllTests  {
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile, hasprev=true, hasnext=false]
+\frametitle{JUnit test suite example}
+\framesubtitle{Test suite execution}
+
+\begin{lstlisting}[language=bash]
+# java \
+	-cp /opt/junit-4.8.1/junit-4.8.1.jar:.
+	org.junit.runner.JUnitCore
+	AllTests
+\end{lstlisting}
+
+\end{frame}
+

@@ -1,0 +1,80 @@
+\pdfminorversion=7
+\documentclass[english, usepdftitle=false, svgnames, color="table, fixpdftex, fixinclude, xcdraw", t]{beamer}
+
+\usepackage{lode-i18n}
+\usepackage{lode-srccode}
+\usepackage{lode-imacid}
+\usepackage{lode-pdf}
+
+\usepackage{common-table}
+\usepackage{tabularx}
+\usepackage{multirow}
+
+\usepackage{animate}
+\usepackage{movie15}
+
+\usepackage{inputx}
+\inputpaths{../CommonAssets/}
+
+\graphicspath{{../CommonAssets/}}
+
+
+\title{Software testing}
+\subtitle{Functional testing}
+\author[]{%
+Marco Aurelio Graciotto Silva\inst{1}, \\\and
+}
+
+\newcommand{\numberofinstitutes}{1}
+\institute[UTFPR]
+{
+	\inst{1}%
+	Federal University of Technology -- Parana (UTFPR)\\
+	Campo Mourao, PR, Brazil
+}
+% \institute[ICMC]
+% {
+% 	\inst{2}%
+% 	University of Sao Paulo (USP)\\
+% 	Sao Carlos, SP, Brazil
+% }
+
+
+\date[]{February 2014}
+
+% \logopicture{icmc-qualipso-inf}
+% \logopicture{icmc-qualipso-inf}
+
+
+\begin{document}
+
+\frontmatter{}
+\include{preamble}
+
+
+\mainmatter{}
+\part{Functional testing}
+\section{Functional testing}
+\include{main/functional-testing}
+
+\subsection{Equivalence partition}
+\include{main/functional-testing/equivalence-partition}
+
+\subsection{Boundary value analysis}
+\include{main/functional-testing/boundary-value-analysis}
+
+\subsection{Cause effect graph}
+\include{main/functional-testing/cause-effect-graph}
+
+
+\backmatter{}
+\part{References and credits}
+\include{bibliography}
+\include{credits}
+
+\part{Instructional elements}
+\include{examples}
+\include{exercises}
+
+
+\end{document}

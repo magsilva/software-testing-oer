@@ -1,0 +1,26 @@
+\begin{frame}[parent={concept:assertion}, hasprev=false, hasnext=false]
+\frametitle{Assertion}
+\framesubtitle{Timing assertion}
+\label{concept:junit-timing-assertion}
+\label{concept:timing-assertion}
+
+\begin{block:concept}{Timing assertion}
+A timing assertion checks if the test case is executed in a given time frame.
+\end{block:concept}
+
+
+\begin{block:fact}{Annotation}
+\begin{itemize}
+	\item JUnit test cases can be annotated with a \srccode{timeout} parameter
+	\begin{itemize}
+		\item E.g., \srccode{@Test(timeout=2000)}
+	\end{itemize}
+
+	\item If the test takes longer than the specified number of milliseconds to
+	run, the test fails.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:junit-timing-assertion}{\beamerbutton{Example: Timing assertion}}
+\end{frame}

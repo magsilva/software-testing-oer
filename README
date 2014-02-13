@@ -1,0 +1,9 @@
+Courses on software testing which were developed using LOD (Learning Object
+Development approach).
+
+Requirements:
+* LaTeX (pdflatex)
+* Packages: animate, flashmovie, import, inputx.sty, latex-scholars, lode, movie15
+
+Compilation instructions:
+* Run 'make'

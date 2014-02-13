@@ -1,0 +1,279 @@
+\begin{frame}[ parent={concept:functional-testing}, hasprev=false, hasnext=true]
+\frametitle{Equivalence partition}
+\label{concept:equivalence-partition}
+
+\begin{block:concept}{Equivalence partition}
+Equivalence partition divides the input conditions, identified from the
+product, into valid and invalid equivalence classes.
+\end{block:concept}
+
+\begin{block:fact}{Rationale}
+\begin{itemize}
+	\item It considers each element of a given equivalence class as equivalent.
+	\begin{itemize}
+		\item If a certain element of a given equivalence class is able to
+		detect a fault, every other element of that same equivalence class
+		is also able to detect the same fault.
+	\end{itemize}
+
+	\item Thus, the correct establishment of the partitions is essential for
+	this criterion.
+	\begin{itemize}
+		\item However, requirements often lacks details to perform this
+		correctly.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasnext=true, hasprev=true]
+\frametitle{Equivalence partition}
+
+\begin{block:fact}{Equivalence partition}
+\begin{itemize}
+	\item Equivalence partition requires a test set to cover:
+	\begin{itemize}
+		\item the valid equivalence classes (\textbf{one} test case can cover
+		\textbf{more than one} valid classes),
+
+		\item and \textbf{one} test case to cover \textbf{each} of the invalid
+		equivalence classes.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Why one test case for each invalid class?}
+\begin{itemize}
+	\item Invalid classes are in general related to a special implementation
+	code to produce differentiated error messages.
+
+	\item Combining several invalid classes in a single test case may conceal
+	such error messages.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\label{procedure:equivalence-partition}
+
+\begin{block:fact}{Two steps}
+The equivalence partition is organized in two phases:
+\begin{itemize}
+	\item identification of equivalence classes,
+	\item definition of test cases for the classes identified.
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block:procedure}{Procedure}
+\begin{enumerate}
+	\item Identify equivalence classes.
+	\begin{enumerate}
+		\item Identify the relevant input conditions.
+		\item Partition each condition in two or more groups.
+	\end{enumerate}
+
+	\item Define the test cases to cover those classes.
+	\begin{enumerate}
+		\item Assign a number for every class.
+		\item Define test cases to cover the greatest number of valid classes
+		as possible, until every valid class is covered.
+		\item For every invalid class, design an specific test case.
+	\end{enumerate}
+\end{enumerate}
+\end{block:procedure}
+
+\hfill
+\refie{example:equivalence-partition}{\beamerbutton{Example}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\framesubtitle{Partition guidelines}
+
+\begin{block:fact}{Partitioning guidelines}
+\begin{itemize}
+	\item The identification of equivalence partitions is, largely, a
+	heuristic process.
+
+	\item For some situations, there are some well established guidelines
+	that can be used.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Tipical situations}
+\begin{itemize}
+	\item Constants
+	\item Enumerations
+	\item Sequences
+	\item Ranges
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\framesubtitle{Partition guidelines}
+
+\begin{block:fact}{Constants}
+\begin{itemize}
+	\item If an input condition specified a single restriction or constant
+	value for the value, there will be two classes:
+	\begin{itemize}
+		\item One valid for the value with the constant.
+		\item One invalid for the value without the constant.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Example}
+\begin{itemize}
+	\item The requirement states that ``the first character of the identifier
+	must be a letter''.
+
+	\item There are two equivalence classes:
+	\begin{itemize}
+		\item Valid class: the first letter of the identifier is a letter.
+		\item Invalid class: the first letter of the identifier is not a
+		letter.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\framesubtitle{Partition guidelines}
+
+\begin{block:fact}{Enumeration}
+\begin{itemize}
+	\item If an input condition specifies a set of N input values and there is
+	a reason to believe that the program handles each one differently, there
+	will be N + 1 classes:
+	\begin{itemize}
+		\item N valid classes for each acceptable input value.
+		\item One invalid for a value not in the enumeration.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+\begin{block}{Example}
+\begin{itemize}
+	\item The requirement states that ``the type of the vehicle must be BUS,
+	TRUCK, CAB, FOOT''.
+
+	\item There are five equivalence classes:
+	\begin{itemize}
+		\item Valid classes: one class for each vehicle type (BUS, TRUCK,
+		CAB, FOOT).
+		\item Invalid class: one class for a vehicle not present in the
+		enumeration (AIRCRAFT).
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\framesubtitle{Partition guidelines}
+
+\begin{block:fact}{Sequence}
+\begin{itemize}
+	\item If the input condition specifies a sequence of values, there are three
+	partitions:
+	\begin{itemize}
+		\item One valid, for the values within the sequence.
+
+		\item Two invalid, for values lower than the bottom value and greater
+		than top value of the sequence.
+		range.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block}{Example}
+\begin{itemize}
+	\item The requirement states that ``one throught six owners can be listed
+	for the automobile''.
+
+	\item There are three equivalence classes:
+	\begin{itemize}
+		\item Valid class: list of owners with one to six names.
+		\item Invalid classes:
+		\begin{itemize}
+			\item empty owner list,
+			\item owner list with more than six names.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\framesubtitle{Partition guidelines}
+
+\begin{block:fact}{Range}
+\begin{itemize}
+	\item If the input condition specifies a range of values, there are three
+	partitions:
+	\begin{itemize}
+		\item One valid, for the values within the range.
+
+		\item Two invalid, for values lower than the bottom value and greater
+		than top value of the range.
+		range.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+
+
+\begin{block}{Example}
+\begin{itemize}
+	\item The requirement states that ``the item count can be from 1 to 999''.
+
+	\item There are three equivalence classes:
+	\begin{itemize}
+		\item Valid class: item count between 1 and 999 (including the number
+		1 and 999).
+		\item Invalid classes:
+		\begin{itemize}
+			\item item count with a value less than 1,
+			\item item count with a value greater than 999.
+		\end{itemize}
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Equivalence partition}
+\framesubtitle{Limitations}
+
+\begin{block:fact}{Limitations}
+\begin{itemize}
+	\item The equivalence partition assumption is too strong in practice.
+	\begin{itemize}
+		\item It is quite common to have data-sensible faults which require a
+		specific value inside an equivalence class in order to be detected.
+	\end{itemize}
+
+	\item Equivalence partition does not explore input condition combinations.
+\end{itemize}
+\end{block:fact}
+\end{frame}

@@ -1,0 +1,206 @@
+\begin{frame}[parent={cmap:structural-software-testing},hasnext=true,hasprev=true]
+\frametitle{Definition-use graph}
+\label{concept:program-graph}
+\label{concept:definition-use-graph}
+\label{concept:dug}
+
+\begin{block:concept}{Definition}
+The definition-use graph (DUG) is a program graph suitable to represent the
+different status of a variable.
+\end{block:concept}
+
+\begin{block:fact}{Definition-use graph and control flow graph}
+\begin{itemize}
+	\item The definition-use graph is an extension of the control flow graph.
+
+	\item The definition-use graph includes information about variable
+	definitions, uses and destructions on each node.
+	\begin{itemize}
+		\item It contains all definition-use pairs for a program.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Graph elements}
+\label{concept:cfg-graph-elements}
+
+\begin{block:fact}{Graph elements}
+\begin{itemize}
+	\item The nodes of a program graph are indivisible code blocks.
+
+	\item The edges of a program graph represent the possible transference of
+	execution between code blocks.
+
+	\item There is just one input node, which corresponds to the code block
+	with the first statement of the program unit.
+
+	\item It is possible to have many output nodes, i.e., nodes without a
+	succeeding node.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:program-graph}{\beamerbutton{Example: Program graph}}
+\refie{example:identifier-cfg}{\beamerbutton{Example: Control-flow graph for Identifier}}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Code block}
+\label{concept:statement}
+\label{concept:statement-block}
+\label{concept:code-block}
+
+\begin{block:concept}{Definition}
+A code block of a program is a sequence of consecutive statements with a single
+entry point and a single exit point.
+\end{block:concept}
+
+\begin{block:fact}{Control flow and code blocks}
+\begin{itemize}
+	\item Control always enter a code block at its entry point and exits from
+	its exit point.
+
+	\item There is no possibility of exit or a halt at any point inside a code
+	block except at its exit point.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Code block}
+
+\begin{block:fact}{Control flow and code blocks}
+\begin{itemize}
+	\item The entry and exit points of a code block coincide when the code
+	block contains only one statement.
+
+	\item Function calls are often treated as code blocks of their own because
+	they cause the control to be transfered away from the currently executing
+	function and hence raise the possibility of abnormal termination of the
+	program.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Decision}
+\label{concept:definition}
+
+\begin{block:concept}{Definition}
+A decision is a statement that causes a deviation in the flow of a program.
+\end{block:concept}
+
+\begin{block:fact}{Decision statements}
+\begin{itemize}
+	\item The transference of execution between code blocks is a consequence of
+	decision statements.
+
+	\item Most high-level languages provides statements, such as \srccode{if},
+	\srccode{while} and \srccode{switch}, to serve as context for decisions.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Variable definition}
+\label{concept:variable-definition}
+
+\begin{block:concept}{Definition}
+A variable definition is the assignment of a value before a variable be used.
+\begin{itemize}
+	\item A variable definition occurs when a value is stored in a memory
+	position.
+\end{itemize}
+\end{block:concept}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Variable use}
+\label{concept:variable-use}
+
+\begin{block:concept}{Definition}
+A variable use is when the reference to such a variable does not
+define it.
+\end{block:concept}
+
+\begin{block:fact}{Types of variable use}
+\begin{itemize}
+	\item There are two kinds of variable use: computational use and
+	predicative use.
+	\begin{itemize}
+		\item A variable computational use (c-use) directly affects the
+		computation being performed or allows the result from a previous
+		variable definition to be observed.
+
+		\item A variable predicative use (p-use) directly affects the control
+		flow of the product implementation.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:dug-construction}
+\frametitle{Definition-use graph}
+\framesubtitle{Definition-use graph construction}
+
+\begin{block:procedure}{DUG construction (1/2)}
+\begin{enumerate}
+	\item Consider a control-flow graph $G = (N, E)$ of a program $P$, where
+	$N$ is the set of nodes and $E$ the set of edges. Each node in $G$
+	corresponds to a code block in $P$: those blocks are denoted as
+	$b_1, b_2, ..., b_k$, assuming that $P$ contains $k > 0$ code blocks.
+
+	\item Let $def_i$ denote the set of variables defined in block $i$.
+
+	\item Let $c-use_i$ denote the set of variables that have a computational
+	use in block $i$.
+
+	\item Let $p-use_i$ denote the set of variables that have a predicative
+	use in block $i$.
+\end{enumerate}
+\end{block:procedure}
+
+\hfill
+\refie{example:identifier-dug}{\beamerbutton{Example: Definition-use graph for Identifier}}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Definition-use graph}
+\framesubtitle{Definition-use graph construction}
+
+\begin{block:procedure}{DUG construction (2/2)}
+\begin{enumerate}
+	\setcounter{enumi}{4}
+	\item Compute $def_i$, $c-use_i$, and $p-use_i$ for each code block $i$ in
+	$P$.
+
+	\item Associate each node $i$ in $N$ with $def_i$, $c-use_i$, and $p-use_i$.
+
+	\item For each node $i$ that as a nonempty predicative use sets and ends in
+	condition $C$, associate edges $(i, j)$ and $(i, k)$ with $C$ and $!C$,
+	respectively, given that edge $(i, j)$ is taken when the condition is true
+	and $(i, k)$ is taken when the condition is false.
+\end{enumerate}
+\end{block:procedure}
+
+\hfill
+\refie{example:identifier-dug}{\beamerbutton{Example: Definition-use graph for Identifier}}
+\end{frame}

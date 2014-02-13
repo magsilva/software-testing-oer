@@ -1,0 +1,67 @@
+\begin{frame}[hasprev=false, hasnext=true, fragile]
+\label{example:blech-exhaustive-testing}
+\frametitle{Exhaustive testing}
+\framesubtitle{Blech example}
+
+\begin{itemize}
+	\item Consider the function \srccode{blech}, implemented as follows:
+\begin{lstlisting}
+int blech(int j) {
+    j = j - 1; // should be j = j + 1;
+    j = j / 30000;
+    return j;
+}
+\end{lstlisting}
+
+	\item Input domain:
+	\begin{itemize}
+		\item Consider an integer type of 16 bits (2 bytes).
+
+		\item The lowest possible input value is -32,768 and the highest is
+		32,767.
+
+		\item Thus there are 65,536 possible inputs into this small software.
+	\end{itemize}
+
+	\item Which test cases can detect the fault?
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false, fragile]
+\frametitle{Exhaustive testing}
+\framesubtitle{Blech example}
+
+\begin{itemize}
+	\item Only four out of the possible 65,536 input values will find this
+	fault:
+\end{itemize}
+
+\begin{table}
+    \centering
+	\small
+    \begin{tabular}{|l|l|l|}
+	\hline
+	Test Cases Input(j)	& Expected Output	& Actual Result \\
+	\hline
+	-30000 & 0 & -1\\
+	\hline
+	-29999 & 0 & -1\\
+	\hline
+	30000 & 1 & 0\\
+	\hline
+	29999 & 1 & 0\\
+	\hline
+    \end{tabular}
+\end{table}
+
+\begin{lstlisting}
+int blech(int j) {
+    j = j - 1; // should be j = j + 1;
+    j = j / 30000;
+    return j;
+}
+\end{lstlisting}
+\end{frame}
+

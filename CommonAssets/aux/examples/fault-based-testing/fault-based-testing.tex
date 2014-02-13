@@ -1,0 +1,71 @@
+\begin{frame}[hasprev=false, hasnext=true, fragile]
+\frametitle{Fault-based testing example}
+\label{example:fault-based-testing}
+
+\begin{block}{Example}
+Consider the following source code snippet \cite[p. 45]{myers:2004}.
+\end{block}
+
+\begin{block}{Source code}
+\begin{lstlisting}[language=java]
+public void foo(int a, int b, int x) {
+	if (a > 1 && b == 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+}
+\end{lstlisting}
+\end{block}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false, fragile]
+\frametitle{Fault-based testing}
+
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{block}{Mutation analysis}
+\begin{itemize}
+	\item Mutation analysis performs single changes in the source code.
+
+	\item For example, comparators such as \srccode{==} can be changed to
+	\srccode{!=}.
+
+	\item The following test case will reveal the error in the mutant:
+	\begin{itemize}
+		\item $a = 3, b = 0, x = 3$
+	\end{itemize}
+\end{itemize}
+\end{block}
+\column{.5\textwidth}
+\begin{block}{Original application}
+\begin{lstlisting}[language=java]
+public int foo(int a, int b, int x) {
+	if (a > 1 && b == 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+	return x;
+}
+\end{lstlisting}
+\end{block}
+\begin{block}{Mutant}
+\begin{lstlisting}[language=java]
+public int foo(int a, int b, int x) {
+	if (a > 1 && b != 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+	return x;
+}
+\end{lstlisting}
+\end{block}
+
+\end{columns}
+\end{frame}

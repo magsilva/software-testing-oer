@@ -1,0 +1,32 @@
+\begin{frame}[hasprev=false,hasnext=false, fragile]
+\label{example-incorrect-statement-example-0}
+\label{example:incorrect-statement-2}
+\frametitle{Incorrect statement}
+\framesubtitle{Description}
+
+\begin{itemize}
+	\item Consider the following software requirement: ``The value of
+	\srccode{y} should be a function of \srccode{x} and \srccode{y}, as
+	defined by the expression \srccode{y = (x - z) / 2}''.
+
+	\item The programmer, when implementing the requirement, wrote:
+	\begin{lstlisting}
+		y = x - z / 2
+	\end{lstlisting}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Incorrect statement}
+\framesubtitle{Diagnostic}
+
+\begin{itemize}
+	\item The programmer wrote an incorrect data definition in the software!
+	That's a fault!
+
+	\item For \srccode{x = 10} and \srccode{z = 8}, the expected output is
+	\srccode{y = 1}, but the incorrect version's output is \srccode{y = 6}.
+\end{itemize}
+
+\end{frame}

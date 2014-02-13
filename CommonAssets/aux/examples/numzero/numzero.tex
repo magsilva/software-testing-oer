@@ -1,0 +1,112 @@
+\begin{frame}[hasprev=false, hasnext=true, fragile]
+\label{example:numzero}
+\frametitle{numZero}
+\framesubtitle{Description}
+
+\begin{itemize}
+	\item Is there any fault in this program?
+\end{itemize}
+
+\begin{lstlisting}
+class numZero
+{
+    /**
+     * If arr is null throw NullPointerException, else return the
+     * number of occurrences of zero in arr
+     */
+    public static int numZero (int[] arr)
+    {
+        int count = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=true, fragile]
+\frametitle{numZero}
+\framesubtitle{Diagnostic}
+
+\begin{itemize}
+	\item The fault in this program is that it starts looking for zeroes at
+	index 1 instead of index 0, as is necessary for arrays in Java.
+	\begin{itemize}
+		\item For example, numZero([2, 7, 0]) correctly evaluates to 1, while
+		numZero([0, 7, 2]) incorrectly evaluates to 0.
+		\begin{itemize}
+			\item In both of these cases the fault is executed.
+
+			\item Although both of these cases result in an error, only the
+			second case results in failure.
+		\end{itemize}
+	 \end{itemize}
+\end{itemize}
+
+\begin{lstlisting}
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count++;
+            }
+        }
+        return count;
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{numZero}
+\framesubtitle{Diagnostic}
+
+\begin{itemize}
+	\item For the first example given above, the state at the if statement on
+	the very first iteration of the loop is (x = [2, 7, 0], count = 0, i = 1,
+	PC = if).
+
+	\item This state is in error precisely because the value of i should be
+	zero on the first iteration.
+
+	\item However, since the value of count is coincidentally correct, the
+	error state does not propagate to the output, and hence the software does
+	not fail.
+\end{itemize}
+
+\begin{lstlisting}
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count++;
+            }
+        }
+        return count;
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false, fragile]
+\frametitle{numZero}
+\framesubtitle{Diagnostic}
+
+\begin{itemize}
+	\item For the second example given above, the corresponding error state is
+	(x = [0, 7, 2], count = 0, i = 1, PC = if).
+
+	\item In this case, the error propagates to the variable count and is
+	present in the return value of the method. Hence a failure results.
+\end{itemize}
+
+\begin{lstlisting}
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] == 0) {
+                count++;
+            }
+        }
+        return count;
+\end{lstlisting}
+\end{frame}
+
+

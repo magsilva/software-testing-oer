@@ -1,0 +1,110 @@
+\pdfminorversion=7
+\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+
+\usepackage{lode-i18n}
+\usepackage{lode-srccode}
+\usepackage{lode-imacid}
+\usepackage{lode-pdf}
+
+\usepackage{animate}
+\usepackage{movie15}
+
+\title{Software testing}
+\subtitle{JUnit}
+\author[]{%
+Marco Aurélio Graciotto Silva\inst{1}, \and
+Ellen Francine Barbosa\inst{1}, \\\and
+José Carlos Maldonado\inst{1}}
+
+\newcommand{\numberofinstitutes}{2}
+\institute[ICMC]
+{
+	\inst{1}%
+%	\textbf{Institute of Mathematical Sciences and Computing}\\
+	University of São Paulo (USP)\\
+	São Carlos, SP, Brazil
+	\and
+	\inst{2}%
+%	\textbf{Institute of Informatics}\\
+	Federal University of Goiás (UFG)\\
+	Goiânia, GO, Brazil
+}
+
+\date[]{February 2011}
+
+\logopicture{resources/Logo/icmc-qualipso-inf}
+
+\begin{document}
+
+\frontmatter{}
+\include{preamble}
+
+
+
+\mainmatter{}
+\part{JUnit}
+\section{JUnit}
+\include{main/junit}
+
+
+\subsection{Test case}
+\include{main/junit/test-case}
+
+
+\subsection{Test suite}
+\include{main/junit/test-suite}
+
+
+\subsection{Assertion}
+\include{main/junit/assertion}
+
+\subsubsection{Identity assertion}
+\include{main/junit/assertion/identity}
+
+\subsubsection{Nullity assertion}
+\include{main/junit/assertion/nullity}
+
+\subsubsection{Equality assertion}
+\include{main/junit/assertion/equality}
+
+\subsubsection{Exception assertion}
+\include{main/junit/assertion/exception}
+
+\subsubsection{Timing assertion}
+\include{main/junit/assertion/timing}
+
+\subsubsection{Truth assertion}
+\include{main/junit/assertion/truth}
+
+\subsubsection{Condition matching assertion}
+\include{main/junit/assertion/condition}
+
+
+\subsection{Fixture}
+\include{main/junit/fixture}
+
+\subsubsection{Before}
+\include{main/junit/fixture/before}
+
+\subsubsection{BeforeClass}
+\include{main/junit/fixture/before-class}
+
+\subsubsection{After}
+\include{main/junit/fixture/after}
+
+\subsubsection{AfterClass}
+\include{main/junit/fixture/after-class}
+
+
+
+\backmatter{}
+\part{References and credits}
+\include{bibliography}
+\include{credits}
+
+\part{Instructional elements}
+\include{examples}
+\include{exercises}
+
+
+\end{document}

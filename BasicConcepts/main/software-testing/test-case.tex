@@ -1,0 +1,125 @@
+\begin{frame}[parent={cmap:software-testing-foundations}, hasprev=false, hasnext=true]
+\frametitle{Test case}
+\label{concept:test-case}
+\label{concept:input-domain}
+\label{concept:output-domain}
+\label{concept:input-data}
+\label{concept:output-data}
+
+\begin{block:concept}{Simplified definition}
+A test case is a pair consisting of test data (a set of values, one for each
+input variable) to be input to the program and the expected output.
+\end{block:concept}
+
+
+\begin{block:concept}{A better definition}
+A test case is usually defined as a tuple $(d, S(d))$, where:
+\begin{itemize}
+	\item $d \in D$ (and $D$ is the input domain), and
+	\item $S(d)$ represents the expected output for the input $d$
+	according to specification $S$.
+\end{itemize}
+\end{block:concept}
+
+\hfill
+\refie{example:sort-test-cases}{\beamerbutton{Example: Test cases for a sort method}}
+\refie{example:num-zero-test-cases}{\beamerbutton{Example: Test cases for the numZero method}}
+\end{frame}
+
+
+\begin{frame}[hasprev=false, hasnext=true]
+\frametitle{Test case}
+\framesubtitle{Assessing a test case}
+\label{concept:test-case-success}
+\label{concept:test-case-failure}
+
+\begin{block:fact}{Successful test cases}
+\begin{itemize}
+	\item At first, a well-constructed and executed test case is successful
+	when it find errors~\cite[p. 7]{myers:2004}
+
+	\item It is also successful when it eventually establishes that there are
+	no more errors to be found (as when applying a test criteria and satisfying
+	all the test requirements).
+\end{itemize}
+\end{block:fact}
+
+\begin{block:fact}{Unsuccessful test cases}
+\begin{itemize}
+	\item A unsuccessful test case is one that causes a program to product the
+	correct result without finding any error.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:doctor-laboratory-test}{\beamerbutton{Analogy for test cases success and failure}}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Test case}
+
+\begin{block:fact}{Execution order}
+\begin{itemize}
+    \item There are two styles of test case design regarding order of test
+    execution:
+	\begin{itemize}
+		\item cascading test cases, and
+		\item independent test cases.
+	\end{itemize}
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\label{concept:cascading-test-case}
+\frametitle{Test case}
+\framesubtitle{Cascading test case}
+
+\begin{block:concept}{Definition}
+Cascading test cases are test cases that build on each other.
+\end{block:concept}
+
+
+\begin{block:fact}{Advantages and disadvantages}
+\begin{itemize}
+	\item The advantage of cascading test cases is that each test case is
+	typically small and simple.
+
+	\item The disadvantage of cascading test cases is that if one test fails,
+	the subsequent tests may be invalid.
+\end{itemize}
+\end{block:fact}
+
+\hfill
+\refie{example:cascading-test-case}{\beamerbutton{Example: Cascading test cases}}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\label{concept:independent-test-case}
+\frametitle{Test case}
+\framesubtitle{Independent test case}
+
+\begin{block:concept}{Definition}
+Independent test cases are entirely self contained.
+\begin{itemize}
+	\item Independent test cases neither build on each other nor require that
+	other tests have been successfully executed.
+\end{itemize}
+\end{block:concept}
+
+\begin{block:fact}{Advantages and disadvantages}
+\begin{itemize}
+	\item The advantage of independent test cases is that any number of tests
+	can be executed in any order.
+
+	\item The disadvantage of independent test cases is that each test tends to
+	be larger and more complex and thus more difficult to design, create, and
+	maintain.
+\end{itemize}
+\end{block:fact}
+\end{frame}

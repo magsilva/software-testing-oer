@@ -1,0 +1,97 @@
+\begin{frame}[hasprev=false, hasnext=true]
+\label{example:triangle}
+\frametitle{Triangle}
+\framesubtitle{Description}
+
+\begin{block}{Software requirements specification}
+The software read three  values that represents the edges of a triangle.
+For those values, the software should write if the triangle is isosceles,
+scalene, or equilateral.
+\end{block}
+
+\begin{block}{Your task}
+\begin{itemize}
+	\item You were hired to develop this software. How would you do it? Think
+	about:
+	\begin{itemize}
+		\item design,
+		\item implementation,
+		\item testing.
+	\end{itemize}
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true, hasnext=true]
+\frametitle{Triangle}
+\framesubtitle{Problem}
+
+\begin{block}{My task}
+\begin{itemize}
+	\item I was the guy that hired you to implement software.
+
+	\item As soon as you deliver the first release of the software, I came up
+	with several issues.
+\end{itemize}
+\end{block}
+
+\begin{block:fact}{Issues}
+\begin{itemize}
+	\item Why the triangle (5, 5, 3) was not recognized as isosceles?
+
+	\item Why did the software accepted triangles which the sum of two edges
+	is less than the third edge?
+
+	\item Why did the software accepted triangles which edges are zero?
+
+	\item Why did the software accepted triangles which edges are negative?
+
+	\item Why did the software accepted triangles which edges are not even a
+	number?
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Triangle}
+\framesubtitle{Diagnostic}
+
+\begin{block:fact}{Diagnostic}
+\begin{itemize}
+	\item The software requirement specification was far from complete (many
+	implicit requirements).
+
+	\item Nonetheless, several errors could be caught it test cases were
+	designed for the software \textbf{before} delivering or even implementing
+	it.
+\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}[hasprev=true,hasnext=false]
+\frametitle{Triangle}
+\framesubtitle{Diagnostic}
+
+\begin{block:fact}{Did you tested for\dots}
+\begin{itemize}
+	\item a valid scalene triangle?
+	\item a valid isosceles triangle?
+	\item a valid equilateral triangle?
+	\item valid isosceles triangles (with permutated edges)?
+	\item a value of zero?
+	\item negative values?
+	\item the sum of two edges is equal to the third edge?
+	\item the sum of two edges is less than the third edge?
+	\item all edges with a value of zero?
+    \item non-integer values?
+    \item insufficient values (e.g., 2 instead of 3 edges)?
+    \item the correct triangle type for the specified input in all the previous
+    tests?
+\end{itemize}
+\end{block:fact}
+\end{frame}
