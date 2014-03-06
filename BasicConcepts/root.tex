@@ -1,5 +1,6 @@
 \pdfminorversion=7
-\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+\documentclass[latin1, english, usepdftitle=false, svgnames, color="table, fixpdftex, fixinclude, xcdraw", t]{beamer}
+
 
 \usepackage{lode-i18n}
 \usepackage{lode-srccode}
@@ -7,6 +8,10 @@
 \usepackage{lode-pdf}
 
 \usepackage{animate}
+
+\usepackage{inputx}
+\inputpaths{../CommonAssets/}
+\graphicspath{{../CommonAssets/figs/}}
 
 \title{Software testing}
 \subtitle{Basic concepts}
@@ -33,7 +38,7 @@ José Carlos Maldonado\inst{1}}
 
 \date[]{February 2011}
 
-\logopicture{resources/Logo/icmc-qualipso-inf}
+\logopicture{icmc-qualipso-inf}
 
 \begin{document}
 
@@ -54,7 +59,7 @@ José Carlos Maldonado\inst{1}}
 
 \subsection{Defect taxonomy}
 \include{main/software-testing/defect-taxonomy}
-
+ 
 \subsection{Test case}
 \include{main/software-testing/test-case}
 
@@ -83,8 +88,8 @@ José Carlos Maldonado\inst{1}}
 \include{credits}
 
 
-\part{Instructional elements}
-\include{examples}
-\include{exercises}
+% \part{Instructional elements}
+% \include{examples}
+% \include{exercises}
 
 \end{document}
