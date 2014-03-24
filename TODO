@@ -1,0 +1,3 @@
+* Fix usage of 'figure' environments with Beamer. I don't know why, but
+  that is currently broken (and used to work just fine before).
+
