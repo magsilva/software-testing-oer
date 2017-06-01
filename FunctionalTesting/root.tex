@@ -1,4 +1,5 @@
 \pdfminorversion=7
+\PassOptionsToPackage{obeyspaces}{url}
 \documentclass[utf8, english, usepdftitle=false, svgnames, color="table, fixpdftex, fixinclude, xcdraw", t]{beamer}
 
 
@@ -14,7 +15,7 @@
 \usepackage{multirow}
 
 \usepackage{animate}
-\usepackage{movie15}
+\usepackage{media9}
 
 \usepackage{inputx}
 \inputpaths{../CommonAssets/}
@@ -25,28 +26,30 @@
 \title{Software testing}
 \subtitle{Functional testing}
 \author[]{%
-Marco Aurelio Graciotto Silva\inst{1}, \\\and
+	Marco Aurélio Graciotto Silva\inst{1}, \and
+	Ellen Francine Barbosa\inst{2}, \\\and
+	José Carlos Maldonado\inst{2}
 }
 
-\newcommand{\numberofinstitutes}{1}
-\institute[UTFPR]
+\newcommand{\numberofinstitutes}{2}
+\institute[ICMC]
 {
 	\inst{1}%
-	Federal University of Technology -- Parana (UTFPR)\\
-	Campo Mourao, PR, Brazil
+	\textbf{Department of Computing}\\
+	Federal University of Technology -- Paraná (UTFPR)\\
+	Campo Mourão, PR, Brazil
+	\and
+	\inst{2}%
+	\textbf{Institute of Mathematical Sciences and Computing}\\
+	University of São Paulo (USP)\\
+	São Carlos, SP, Brazil
+	
 }
-% \institute[ICMC]
-% {
-% 	\inst{2}%
-% 	University of Sao Paulo (USP)\\
-% 	Sao Carlos, SP, Brazil
-% }
 
 
-\date[]{February 2014}
+\date[]{2017}
 
-% \logopicture{icmc-qualipso-inf}
-% \logopicture{icmc-qualipso-inf}
+\logopicture{../CommonAssets/figs/icmc-qualipso-inf.png}
 
 
 \begin{document}
