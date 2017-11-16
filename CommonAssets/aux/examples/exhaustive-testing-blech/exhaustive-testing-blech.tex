@@ -3,6 +3,7 @@
 \frametitle{Exhaustive testing}
 \framesubtitle{Blech example}
 
+\begin{block:ie}{}
 \begin{itemize}
 	\item Consider the function \srccode{blech}, implemented as follows:
 \begin{lstlisting}
@@ -25,6 +26,7 @@ int blech(int j) {
 
 	\item Which test cases can detect the fault?
 \end{itemize}
+\end{block:ie}
 \end{frame}
 
 
@@ -33,13 +35,14 @@ int blech(int j) {
 \frametitle{Exhaustive testing}
 \framesubtitle{Blech example}
 
+\begin{block:ie}{}
 \begin{itemize}
 	\item Only four out of the possible 65,536 input values will find this
 	fault:
 \end{itemize}
 
-\begin{table}
-    \centering
+{
+	\centering
 	\small
     \begin{tabular}{|l|l|l|}
 	\hline
@@ -54,7 +57,7 @@ int blech(int j) {
 	29999 & 1 & 0\\
 	\hline
     \end{tabular}
-\end{table}
+}
 
 \begin{lstlisting}
 int blech(int j) {
@@ -63,5 +66,6 @@ int blech(int j) {
     return j;
 }
 \end{lstlisting}
+\end{block:ie}
 \end{frame}
 
