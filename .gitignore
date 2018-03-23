@@ -28,3 +28,4 @@ root.pdf
 *.snm
 *.synctex.gz
 *.fdb_latexmk
+*.vrb

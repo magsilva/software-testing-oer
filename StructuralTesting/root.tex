@@ -1,38 +1,51 @@
 \pdfminorversion=7
-\documentclass[usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
+\PassOptionsToPackage{obeyspaces}{url}
+\documentclass[latin1, english, usepdftitle=false, svgnames, color="table, fixpdftex, hyperref, fixinclude, xcdraw", t]{beamer}
 
-\usepackage{lode-i18n}
-\usepackage{lode-srccode}
+
+\usepackage{latexscholar-i18n}
+\usepackage{latexscholar-verbatim}
 \usepackage{lode-imacid}
-\usepackage{lode-pdf}
+\usepackage{latexscholar-pdf}
 
 \usepackage{animate}
+
+\usepackage{inputx}
+\inputpaths{../CommonAssets/}
+
+\graphicspath{{../CommonAssets/}}
+
 
 \title{Software testing}
 \subtitle{Structural testing}
 \author[]{%
-Marco Aurélio Graciotto Silva\inst{1}, \and
-Ellen Francine Barbosa\inst{1}, \\\and
-Márcio Eduardo Delamaro\inst{1}, \and
-Auri Marcelo Rizzo Vincenzi\inst{2}, \\\and
-José Carlos Maldonado\inst{1}}
+	Marco Aurélio Graciotto Silva\inst{1}, \and
+	Ellen Francine Barbosa\inst{2}, \\\and
+	Márcio Eduardo Delamaro\inst{2}, \and
+	Auri Marcelo Rizzo Vincenzi\inst{3}, \\\and
+	José Carlos Maldonado\inst{2}
+}
 
-\newcommand{\numberofinstitutes}{2}
+\newcommand{\numberofinstitutes}{3}
 \institute[ICMC]
 {
 	\inst{1}%
+%	\textbf{Department of Computing}\\
+	Federal University of Technology -- Paraná (UTFPR)\\
+	Campo Mourão, PR, Brazil
+	\and
+	\inst{2}%
 %	\textbf{Institute of Mathematical Sciences and Computing}\\
 	University of São Paulo (USP)\\
 	São Carlos, SP, Brazil
 	\and
-	\inst{2}%
-%	\textbf{Institute of Informatics}\\
-	Federal University of Goiás (UFG)\\
-	Goiânia, GO, Brazil
+	\inst{3}
+%	\textbf{Department of Computing}\\
+	Federal University of São Carlos (UFSCar)\\
+	São Carlos, SP, Brazil
 }
 
-\date[]{February 2011}
-
+\date[]{2017}
 \logopicture{figs/icmc-qualipso-inf}
 
 \begin{document}

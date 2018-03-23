@@ -25,9 +25,24 @@ public int foo(int a, int b, int x) {
 \begin{frame}[hasprev=true, hasnext=true, fragile]
 \frametitle{Structural testing example}
 
-\begin{columns}[t]
-\column{.5\textwidth}
-\begin{block}{Statement criteria}
+\vspace{-.3cm}
+\begin{block}{Source code}
+\vspace{-.3cm}
+\begin{lstlisting}[language=java]
+public int foo(int a, int b, int x) {
+	if (a > 1 && b == 0) {
+		x = x/a;
+	}
+	if (a == 2 || x > 1) {
+		x = x + 1;
+	}
+	return x;
+}
+\end{lstlisting}
+\vspace{-.15cm}
+\end{block}
+
+\begin{block}{Statement criterion}
 \begin{itemize}
 	\item Test cases that cover all test requirements for \textbf{statement
 	criterion}:
@@ -41,8 +56,15 @@ public int foo(int a, int b, int x) {
 	\end{itemize}
 \end{itemize}
 \end{block}
-\column{.5\textwidth}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false, fragile]
+\frametitle{Structural testing example}
+
+\vspace{-.3cm}
 \begin{block}{Source code}
+\vspace{-.3cm}
 \begin{lstlisting}[language=java]
 public int foo(int a, int b, int x) {
 	if (a > 1 && b == 0) {
@@ -54,17 +76,10 @@ public int foo(int a, int b, int x) {
 	return x;
 }
 \end{lstlisting}
+\vspace{-.15cm}
 \end{block}
-\end{columns}
-\end{frame}
 
-
-\begin{frame}[hasprev=true, hasnext=false, fragile]
-\frametitle{Structural testing example}
-
-\begin{columns}[t]
-\column{.5\textwidth}
-\begin{block}{Statement criteria}
+\begin{block}{Decision criterion}
 \begin{itemize}
 	\item Test cases that cover all test requirements for \textbf{decision
 	criterion}:
@@ -74,20 +89,5 @@ public int foo(int a, int b, int x) {
 	\end{itemize}
 \end{itemize}
 \end{block}
-\column{.5\textwidth}
-\begin{block}{Source code}
-\begin{lstlisting}[language=java]
-public int foo(int a, int b, int x) {
-	if (a > 1 && b == 0) {
-		x = x/a;
-	}
-	if (a == 2 || x > 1) {
-		x = x + 1;
-	}
-	return x;
-}
-\end{lstlisting}
-\end{block}
-\end{columns}
 \end{frame}
 

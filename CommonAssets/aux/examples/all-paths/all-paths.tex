@@ -2,8 +2,9 @@
 \label{example:all-paths}
 \frametitle{All-paths infeasibility example}
 
-The block below executes \srccode{doSomethingWith()} one billion times
-(1000 x 1000 x 1000).
+	\begin{block:fact}{}
+		The block below executes \srccode{doSomethingWith()} one billion times
+		(1000 x 1000 x 1000).
 
 \begin{lstlisting}
 for (i =1; i <=1000; i ++)
@@ -11,6 +12,7 @@ for (i =1; i <=1000; i ++)
 		for ( k =1; k <=1000; k++)
 			doSomethingWith(i, j, k);
 \end{lstlisting}
+	\end{block:fact}
 
 \end{frame}
 

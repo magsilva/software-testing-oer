@@ -1,0 +1,112 @@
+\begin{frame}[parent={concept:junit}, hasprev=false, hasnext=true]
+\frametitle{JUnit}
+\framesubtitle{Installation (command line)}
+\label{procedure:junit:installation:cmdline}
+
+
+\begin{block:fact}{Requirements}
+\begin{itemize}
+	\item JUnit requires the Java SDK 1.5 or newer.
+\end{itemize}
+\end{block:fact}
+
+\begin{block:procedure}{}
+\begin{enumerate}
+	\item Download JUnit at \url{https://github.com/junit-team/junit4/wiki/Download-and-Install}.
+	\begin{itemize}
+		\item Current version is 4.12.
+
+		\item The application is distributed as two JAR files:
+		\begin{itemize}
+			\item \srccode{junit.jar}: main JUnit library
+			\item \srccode{hamcrest-core}: library of matchers (optional, only required for \srccode{assertThat)}
+		\end{itemize}
+	\end{itemize}
+\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}[fragile, hasprev=true, hasnext=true]
+\frametitle{JUnit}
+\framesubtitle{Installation (command line)}
+
+\begin{block:fact}{Classpath configuration}
+	\begin{itemize}
+		\item You can add the library to the CLASSPATH environment variable.
+\begin{lstlisting}
+Unix:
+export CLASSPATH=/opt/junit/junit.jar:
+  /opt/junit/hamcrest-core.jar:$CLASSPATH
+		
+Windows:
+set CLASSPATH=C:\junit\junit.jar;
+  C:\junit\hamcrest-core.jar;%CLASSPATH%
+\end{lstlisting}
+		
+		\item You can use the -cp option when running the tests. This is the
+		recommended option!
+\begin{lstlisting}
+java -cp /opt/junit/junit.jar:/opt/junit/hamcrest-core.jar  <program>
+\end{lstlisting}
+	\end{itemize}
+\end{block:fact}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{JUnit}
+\framesubtitle{Installation (Eclipse)}
+\label{procedure:junit:installation:eclipse}
+
+
+\begin{block:fact}{Requirements}
+	\begin{itemize}
+		\item Any Eclipse version
+	\end{itemize}
+\end{block:fact}
+
+\begin{block:procedure}{}
+	For each project you want to use JUnit, proceed as follows:
+	\begin{enumerate}
+		\item Access the project's properties.
+		\item Select \srccode{Java Build Path} tab on the left.
+		\item Select \srccode{Libraries} tab on the right.
+		\item Select \srccode{Add Library} button on the right of \srccode{Libraries} tab.
+		\item Select \srccode{Junit}.
+		\item Proceed to the next window by pressing the \srccode{Next button}.
+		\item Check if JUnit version is \srccode{JUnit 4}.
+		\item Press \srccode{Finish} button.
+		\item Press \srccode{Apply} button.
+		\item Press \srccode{Ok} button.
+	\end{enumerate}
+\end{block:procedure}
+\end{frame}
+
+
+\begin{frame}[hasprev=true, hasnext=false]
+\frametitle{JUnit}
+\framesubtitle{Shake down}
+\label{procedure:junit:shakedown}
+
+
+\begin{block:fact}{Is it working?}
+\begin{itemize}
+	\item To check whether JUnit was correctly installed, you can run the JUnit
+	test suite.
+	\begin{itemize}
+		\item The class with all the test cases for JUnit is
+		\srccode{org.junit.tests.AllTests}.
+
+		\item This class is located at the root of JUnit installation directory.
+	\end{itemize}
+
+	\item Or you may create your own test set! Check the example below.
+\end{itemize}
+\end{block:fact}
+
+
+\hfill
+\refie{example:junit-shakedown}{\beamerbutton{Example: JUnit shakedown}}
+\end{frame}

@@ -2,16 +2,16 @@
 \frametitle{Equivalence partition example}
 
 \begin{block:fact}{DIMENSION}
-Assume that you are developing a compiler for a subset of an ancient language
-called Fortran and that your team is currently implementing the statement
+Assume that you are developing a compiler for a subset of Fortran and
+that your team is currently implementing the statement
 \srccode{DIMENSION}. The following requirements must be satisfied:
 
 \begin{enumerate}
 	\item The syntax of the \srccode{DIMENSION} statement is
-	\texttt{DIMENSION ad[, ad]*}, where:
+	\srccode{DIMENSION ad[, ad]*}, where:
 	\begin{itemize}
 		\item \srccode{ad} is an array descriptor of the form
-		\texttt[n(d[ ,d]*)},
+		\srccode{n(d[, d]*)},
 
 		\item \srccode{n} is the symbolic name of the array,
 
@@ -31,9 +31,9 @@ called Fortran and that your team is currently implementing the statement
 \begin{block:fact}{DIMENSION}
 \begin{enumerate}
 	\item The minimum and maximum numbers of dimension declarations that can
-	be specified for an array are one an seven, respectively.
+	be specified for an array are 1 and 7, respectively.
 
-	\item The syntax of a dimension declarator is \srccode{lb: ]ub}, where
+	\item The syntax of a dimension declarator $d$ is \srccode{[lb: ]?ub}, where
 	\srccode{lb} and \srccode{ub} are, respectively, the lower and upper
 	dimension bounds.
 
@@ -55,14 +55,14 @@ called Fortran and that your team is currently implementing the statement
 \begin{block}{Equivalence classes form}
 \begin{tabularx}{\textwidth}{|X|X|}
 \textbf{Input condition}		& \textbf{Valid class}\\\hline
-Number of array descriptors 	& one (1), more than one (2)\\\hline
+Number of array descriptors 	& one (1); more than one (2)\\\hline
 Size of the array name			& 1-6 (4)\\\hline
-Array name						& has letters (7), has digits (8)\\\hline
+Array name						& has letters (7); has digits (8)\\\hline
 Array name starts with letter	& yes (10)\\\hline
 Number of dimensions			& 1-7 (12)\\\hline
-Lower bound is specified		& no, yes and it is a number (15)\\\hline
-Upper bound is specified		& no;  yes and it is equal or greater than lower bound (17)\\\hline
-Statement has multiple lines	& yes (21), no (22)\\
+Lower bound is specified		& no (15); yes and it is a number (16)\\\hline
+Upper bound is specified		& yes, and it is equal or greater than lower bound (18)\\\hline
+Statement has multiple lines	& yes (22); no (23)\\
 \end{tabularx}
 \end{block}
 \end{frame}
@@ -82,8 +82,8 @@ Size of the array name			&  0 (5), more than 6 (6)\\\hline
 Array name						&  has something else (9)\\\hline
 Array name starts with letter	&  no (11)\\\hline
 Number of dimensions			&  0 (13), more than 7 (14)\\\hline
-Lower bound is specified		&  yes, but it is not a number (16)\\\hline
-Upper bound is specified		&  yes, but it is not a number (18); yes, but it is less than lower bound (19); yes, but there is not lower bound (20)\\\hline
+Lower bound is specified		&  yes, but it is not a number (17)\\\hline
+Upper bound is specified		&  yes, but it is not a number (19); yes, but it is less than lower bound (20)\\\hline
 Statement has multiple lines	&  -\\
 \end{tabularx}
 \end{block}
@@ -111,8 +111,9 @@ Statement has multiple lines	&  -\\
 
 \begin{block}{Test cases for valid classes}
 \begin{itemize}
-	\item \srccode{DIMENSION A(2)} \textbf{(1, 4, 7, 22)}
-	\item \srccode{DIMENSION A 12345(9, 100), BBB(-15:30)} \textbf{(2, 8, 15, 17, 21)}
+	\item \srccode{DIMENSION A(2)} \textbf{(1, 4, 7, 23)}
+	\item \srccode{DIMENSION A 12345(9, 100),}\\\srccode{BBB(-15:30)} \textbf{(2, 8, 16, 18, 22)}
+	\item \srccode{DIMENSION D(:1)} \textbf{(15)}
 \end{itemize}
 \end{block}
 \end{frame}
@@ -131,10 +132,10 @@ Statement has multiple lines	&  -\\
 	\item \srccode{DIMENSION 1A(10)} \textbf{(11)}
 	\item \srccode{DIMENSION B} \textbf{(13)}
 	\item \srccode{DIMENSION B(1, 2, 3, 4, 5, 6, 7, 8)} \textbf{(14)}
-	\item \srccode{DIMENSION B(ABC)} \textbf{(16)}
-	\item \srccode{DIMENSION C(4:ABC)} \textbf{(18)}
-	\item \srccode{DIMENSION C(4:3)} \textbf{(19)}
-	\item \srccode{DIMENSION D(:1)} \textbf{(20)}
+	\item \srccode{DIMENSION B(ABC)} \textbf{(17)}
+	\item \srccode{DIMENSION C(4:ABC)} \textbf{(19)}
+	\item \srccode{DIMENSION C(4:3)} \textbf{(20)}
+
 \end{itemize}
 \end{block}
 \end{frame}

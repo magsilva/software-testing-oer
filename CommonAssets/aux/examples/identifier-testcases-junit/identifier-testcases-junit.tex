@@ -1,4 +1,4 @@
-\begin{frame}[hasprev=false, hasnext=true]
+\begin{frame}[hasprev=false, hasnext=false]
 \frametitle{Identifier}
 \label{example:identifier-testcases-junit}
 
@@ -29,12 +29,12 @@ import org.junit.Assert;
 
 public abstract class IdentifierTestSet
 {
-  protected Identifier id;
+	protected Identifier id;
 
-  @Before
-  public void setUp() {
-    id = new Identifier();
-  }
+	@Before
+	public void setUp() {
+		id = new Identifier();
+	}
 }
 \end{lstlisting}
 \end{frame}
@@ -64,21 +64,11 @@ public class IdentifierTestSet1 extends IdentifierTestSet
     boolean result = id.validateIdentifier("x12345");
     Assert.assertEquals(true, result);
   }
-
-  @Test
-  public void validate3() {
-    boolean result = id.validateIdentifier("&123");
-    Assert.assertFalse(result);
-  }
-
-  @Test
-  public void validate4() {
-    boolean result = id.validateIdentifier("Inv@lido");
-    Assert.assertFalse(result);
-  }
 }
 \end{lstlisting}
 \end{frame}
+
+
 
 
 \begin{frame}[fragile]
@@ -88,43 +78,85 @@ public class IdentifierTestSet1 extends IdentifierTestSet
 \begin{lstlisting}
 package identifier;
 
-import org.junit.*;
+import org.junit.*
 
-public class IdentifierTestSet2  extends IdentifierTestSet
+public class IdentifierTestSet2 extends IdentifierTestSet
 {
-  @Test
-  public void validate5() {
-    Assert.assertNotNull(id);
-  }
+	@Test
+	public void validate3() {
+		boolean result = id.validateIdentifier("&123");
+		Assert.assertFalse(result);
+	}
 
-  @Test(expected=IndexOutOfBoundsException.class)
-  public void stringException() {
-    String str = new String("JUnit Example");
-    str.substring(30);
-  }
-
-  @Test(timeout=2000)
-  public void looping() {
-    boolean result = id.validateIdentifier("Abcd5");
-    Assert.assertEquals(true, result);
-  }
-
-  @Ignore("Out of the program scope")
-  @Test(expected=IndexOutOfBoundsException.class)
-  public void stringException2() {
-    String str = new String("JUnit Example");
-     str.substring(30);
-   }
+	@Test
+	public void validate4() {
+		boolean result = id.validateIdentifier("Inv@lido");
+		Assert.assertFalse(result);
+	}
 }
 \end{lstlisting}
 \end{frame}
 
 
 
+\begin{frame}[fragile]
+\frametitle{Identifier}
+\framesubtitle{Test set 3}
+
+\begin{lstlisting}
+package identifier;
+
+import org.junit.*;
+
+public class IdentifierTestSet3  extends IdentifierTestSet
+{
+	@Test
+	public void validate5() {
+		Assert.assertNotNull(id);
+	}
+
+	@Test(expected=IndexOutOfBoundsException.class)
+	public void stringException() {
+		String str = new String("JUnit Example");
+		str.substring(30);
+	}
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Identifier}
+\framesubtitle{Test set 4}
+
+\begin{lstlisting}
+package identifier;
+
+import org.junit.*;
+
+public class IdentifierTestSet4  extends IdentifierTestSet
+{
+	@Test(timeout=2000)
+	public void looping() {
+		boolean result = id.validateIdentifier("Abcd5");
+		Assert.assertEquals(true, result);
+	}
+
+	@Ignore("Out of the program scope")
+	@Test(expected=IndexOutOfBoundsException.class)
+		public void stringException2() {
+		String str = new String("JUnit Example");
+		str.substring(30);
+	}
+}
+\end{lstlisting}
+\end{frame}
+
+
 
 \begin{frame}[fragile, hasprev=true, hasnext=false]
 \frametitle{Identifier}
-\framesubtitle{Test set 2}
+\framesubtitle{Test suite}
 
 \begin{lstlisting}
 package identifier;
@@ -134,11 +166,13 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    IdentifierTestSet1.class,
+	IdentifierTestSet1.class,
     IdentifierTestSet2.class
+    IdentifierTestSet3.class
+    IdentifierTestSet4.class
 })
-
-public class AllTests  {
+public class AllTests
+{
 }
 \end{lstlisting}
 \end{frame}
