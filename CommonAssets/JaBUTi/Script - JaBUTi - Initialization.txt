@@ -1,0 +1,165 @@
+[set CLASSPATH=c:\JaBUTi\bcel-5.2.jar;C:\JaBUTi\Jabuti_1_0_2-bin.jar;.
+java br.jabuti.gui.JabutiGUI
+
+Instalar o Console (http://sourceforge.net/projects/console/)
+Instalar o QuickTime
+Instalar o Camtasia Studio
+
+Desabilite as animações
+- Abrir caixas de combinação
+- Animar controles e elementos no Windows
+- Animar janelas ao minimizar e maximizar
+- Desligar botões da barra de ferramentas
+- Esmaecer itens de menu após clicados
+- Esmaecer ou deslizar Dicas de ferramenta para a exibição
+- Esmaecer ou deslizar menus para a exibição
+- Habilitar composição da área de trabalho
+- Mostrar a visualização e os filtros na pasta
+- Rolar caixas de listagem suavemente
+
+Configurar a região a ser capturada para 640x480, 800x600,
+1024x768, 1280×720, 1366×768, 1920×1080
+
+Utilizar 1 keyframe para cada 15 quadros
+
+Salvar o vídeo e o áudio em formato não comprimido]
+
+
+
+Para iniciar uma sessão de teste na JaBUTi, é necessário
+definir um novo projeto. Selecione o item File e, então,
+o item Open class.
+
+[Colocar o mouse no meio da janela da JaBUTi]
+
+[Mover o mouse para o item File do Menu]
+[Selecione o item File]
+
+[Mover o mouse para o item Open Class do item File]
+[Selecione o item Open Class]
+
+
+Para definir um projeto, é necessário escolher uma classe
+base. Esta classe geralmente é a o driver de teste (por
+exemplo, uma classe de caso de teste ou suite de teste
+do JUnit).
+
+Utilizaremos, neste exemplo, o projeto VendingMachine.
+Selecione a pasta com os arquivos referentes ao projeto.
+Neste caso, é a pasta Projects\VendingMachine\vending.
+
+[Selecione a pasta Projects]
+
+[Selecione a pasta VendingMachine]
+
+[Selecione a pasta vending]
+
+
+No caso da VendingMachine, a classe base é o TestDriver.class,
+a qual define casos de teste para todas as demais classes
+da aplicação.
+
+[Selecione o arquivo TestDriver.class]
+
+
+Ao selecionar o arquivo TestDriver.class, a JaBUTi
+automaticamente define o pacote ao qual a classe escolhida
+pertence.
+
+[Mover o mouse para o campo Package]
+
+
+Além de selecionar a classe base, é necessário definir o
+classpath para a execução da aplicação. Neste campo, é
+necessário especificar o diretório que contém o pacote
+da classe base. Para a VendingMachine, esse diretório é o
+C:\JaBUTi\Projects\VendingMachine.
+
+[Definir o diretório da VendingMachine do Classpath]
+
+Também é possível especificar, no campo Classpath, outros
+diretórios e pacotes JAR necessários para a execução da
+aplicação.
+
+{opcional}
+Por exemplo, suponha, hipoteticamente, que a
+VendingMachine precisa do pacote Candies.jar, o qual está
+localizado no diretório C:\JaBUTi\Projects\VendingMachine\lib\Candies.jar.
+Para incluir esse pacote no classpath, acrescente o caminho
+completo do pacto no campo Classpath:
+
+[Colocar no Classpath C:\JaBUTi\Projects\VendingMachine\lib\Candies.jar.
+Não esqueça de separar o caminho anterior do novo por ;
+(ponto e vírgula)]
+{opcional}
+
+Quanto a opção "Hide CFG Call Nodes", ignore-a (ela não é
+relevante para nossa sessão de teste).
+
+Com todas as informações preenchida, vamos prosseguir para
+a próxima etapa.
+
+[Selecionar a opção Open]
+
+A próxima tela permite a seleção das classes a serem
+analisadas durante a sessão de teste.
+
+Na esquerda, temos todas as classes relacionadas a classe
+base.
+
+[Expandir a pasta vending]
+
+A JaBUTi permite selecionar pacotes a serem ignorados na
+sessão de teste e classes a serem instrumentadas.
+
+
+[Mover o mouse para 'Avoided packages']
+
+Em 'Avoided packages', são tipicamente inseridos pacotes
+que não fazem parte da aplicação. Geralmente são produtos
+de terceiros e que não são relevantes para o teste da 
+aplicação. Por exemplo, as classes de sistema do Java
+são automaticamente ignoradas pela JaBUTi.
+
+
+[Mover o mouse para 'Classes to Instrument']
+
+A JaBUTi, para suas atividades de teste, precisa instrumentar
+as classes da aplicação. Podemos selecionar todas as classes
+de um pacote ou algumas classes em específico.
+
+Para selecionar todas as classes de um pacote, selecione
+o pacote em 'User Packages' e clique na esta para direita
+em 'Classes to Instrument'.
+
+[Selecione o pacote 'vending' e clique na fecha para direita]
+
+O ideal, no entanto, é selecionar apenas as classes realmente
+necessários. Para a VendingMachine, a classe vending.TestDriver
+não precisa ser instrumentada. Portanto, vamos removê-la
+da seleção de classes a serem instrumentadas:
+
+[Selecione a classe 'vending.TestDriver' e clique na seta para
+a esquerda]
+
+Definidas as classes a serem instrumentadas, é necessário
+especificar o nome do projeto. No campo 'Project Name',
+selecione o botão 'Select' e especifique o nome do
+projeto (por exemplo, VendingMachine).
+
+[Digite VendingMachine no campo File Name]
+
+Um arquivo com extensão .jbt será criado com as informações
+do projeto.
+
+[Arrastar a barra lateral do campo 'Project Name' e mostrar
+a extensão .jbt]
+
+Os campos restantes desta janela (Classpath e Base Class)
+não precisam ser alterados. Para concluir então a criação
+do projeto, selecione o botão 'Ok'.
+
+A JaBUTi, assim que cria o projeto, analisa e instrumenta
+os arquivos. A tela a seguir mostra o código de uma das
+classes a serem testadas, com o destaque para os requisitos
+de teste.
